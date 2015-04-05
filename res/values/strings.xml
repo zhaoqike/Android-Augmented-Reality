@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AugmentedReality</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="shift_mode">preprocess or track</string>
+    <string name="is_preprocess">is preprocess</string>
+    <string name="is_track">is track</string>
+    
+    <string name="preprocess">preprocess</string>
+    <string name="pre_open_camera">open camera</string>
+    <string name="pre_first_frame">first frame</string>
+    <string name="pre_second_frame">second frame</string>
+    <string name="pre_start_preprocessing">start preprocessing</string>
+    <string name="pre_store_map">store_map</string>
+    
+    <string name="tracking">tracking</string>
+    <string name="trk_open_camera">open camera</string>
+    <string name="trk_lod_map">lod_map</string>
+    <string name="trk_start_tracking">start_tracking</string>
+    
+    
+    <string name="exit">exit</string>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <string name="hello">Hello World, osgViewer!</string>
+    <color name="uiControlBar">#BBBBBB</color>
+    <string name="uiButtonLight">Light (ON/OFF)</string>
+    <string name="uiButtonCenter">Center View</string>
+    <string name="uiButtonChangeNavigation">Change Navigation</string>
+    <string name="uiTextEntryText">Write address</string>
+    <string name="uiToastNavPrincipal">Main navigation</string>
+    <string name="uiToastNavSecond">Second Navigation</string>
+    <string name="uiToastLightOn">Light ON</string>
+    <string name="uiToastLightOff">Light OFF</string>
+    <string name="menuLoadObject">Load Object</string>
+    <string name="menuLoadObjectCondensed">L. Object</string>
+    <string name="menuDeleteObject">Delete Object</string>
+    <string name="menuDeleteObjectCondensed">D. Object</string>
+    <string name="menuCleanScene">Clean Scene</string>
+    <string name="menuCleanSceneCondensed">Clean</string>
+    <string name="menuChangeBackground">Change Background</string>
+    <string name="menuChangeBackgroundCondensed">C.Background</string>
+    <string name="menuShowKeyboard">Show Keyboard</string>
+    <string name="menuShowKeyboardCondensed">S.Keyboard</string>
+    <string name="uiDialogTextChoseRemove">Select Object</string>
+    <string name="uiDialogTextAddress">Write file address</string>
+    <string name="uiDialogOk">Accept</string>
+    <string name="uiDialogCancel">Cancel</string>
+
+</resources>

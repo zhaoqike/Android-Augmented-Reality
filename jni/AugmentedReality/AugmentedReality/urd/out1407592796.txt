@@ -1,0 +1,38 @@
+hello world
+0000.png
+0001.png
+0002.png
+0003.png
+0004.png
+0005.png
+0006.png
+0007.png
+0008.png
+0009.png
+0010.png
+keyframe 1 end
+keyframe 2 end
+F keeping 2183 / 3298
+3298 matches before, 2183 new matches after Fundamental Matrix
+=========================== Baseline triangulation ===========================
+Find camera matrices...
+before fundamentalMat 3298
+F keeping 2183 / 3298
+3298 matches before, 2183 new matches after Fundamental Matrix
+after fundamentalMat 2183
+K
+[3072, 0, 1536;
+  0, 3072, 1024;
+  0, 0, 1]
+F
+[-1.824806879101906e-008, 2.129233103097608e-006, -0.002987747576815636;
+  -1.550370998966097e-006, -4.577406644134503e-008, -0.005282735669698613;
+  0.002053560337252347, 0.004426580485999865, 1]
+det(F)
+-1.13792e-019
+E
+[-0.1722103828255044, 20.0939645728231, -2.566477556449353;
+  -14.63113638550686, -0.4319782874351983, -23.68812493254597;
+  1.345386702790837, 23.50144477692474, -0.4921933267231999]
+det(E) != 0 : -1.01344e-005
+after init map size: 0

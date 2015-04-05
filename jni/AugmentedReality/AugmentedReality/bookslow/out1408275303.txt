@@ -1,0 +1,24 @@
+keypoints size
+50061
+descriptores size
+50061
+keyframe 1 end
+0_20140809_194005.jpg
+IMG_20140809_194009.jpg
+IMG_20140809_194012.jpg
+IMG_20140809_194016.jpg
+IMG_20140809_194019.jpg
+IMG_20140809_194023.jpg
+IMG_20140809_194026.jpg
+IMG_20140809_194029.jpg
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 109986
+after retain keypoints is: 50384
+keyframe 1 end
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 122771
+after retain keypoints is: 53600

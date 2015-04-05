@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.augmentedreality.MainActivity" >
+
+    <item android:id="@+id/pre_opencam" android:title="@string/pre_open_camera"/>
+    <item android:id="@+id/pre_first" android:title="@string/pre_first_frame"/>
+    <item android:id="@+id/pre_second" android:title="@string/pre_second_frame"/>
+    <item android:id="@+id/pre_start" android:title="@string/pre_start_preprocessing"/>
+    <item android:id="@+id/pre_store" android:title="@string/pre_store_map"/>
+
+</menu>

@@ -1,0 +1,27 @@
+hello world
+IMG_20140809_193957.jpg
+IMG_20140809_194001.jpg
+IMG_20140809_194005.jpg
+IMG_20140809_194009.jpg
+IMG_20140809_194012.jpg
+IMG_20140809_194016.jpg
+IMG_20140809_194019.jpg
+IMG_20140809_194023.jpg
+IMG_20140809_194026.jpg
+IMG_20140809_194029.jpg
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 109986
+after retain keypoints is: 50384
+keyframe 1 end
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 122771
+after retain keypoints is: 53600
+keyframe 2 end
+begin match
+[32 x 52820]  [32 x 50061]0
+begin maskmatch
+0

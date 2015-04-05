@@ -1,0 +1,61 @@
+hello world
+IMG_20140809_193957.jpg
+IMG_20140809_194001.jpg
+IMG_20140809_194005.jpg
+IMG_20140809_194009.jpg
+IMG_20140809_194012.jpg
+IMG_20140809_194016.jpg
+IMG_20140809_194019.jpg
+IMG_20140809_194023.jpg
+IMG_20140809_194026.jpg
+IMG_20140809_194029.jpg
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 109986
+after retain keypoints is: 50384
+keyframe 1 end
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 122771
+after retain keypoints is: 53600
+keyframe 2 end
+begin match
+[32 x 52820]  [32 x 50061]0
+begin maskmatch
+0
+22464
+[32 x 52820]  [32 x 50061]22464
+end match
+begin elliminate
+end elliminate    22464  22464
+after swap matches22464  22464
+keypoints_1.size() 52820 imgpts1_good.size() 22464
+keypoints_2.size() 50061 imgpts2_good.size() 22464
+F keeping 3638 / 22464
+22464 matches before, 3638 new matches after Fundamental Matrix
+after mask match: 3638
+out  match3638
+=========================== Baseline triangulation ===========================
+Find camera matrices...
+before fundamentalMat 3638
+F keeping 3467 / 3638
+3638 matches before, 3467 new matches after Fundamental Matrix
+after fundamentalMat 3467
+K
+[2560, 0, 720;
+  0, 2560, 1280;
+  0, 0, 1]
+F
+[-3.770967103627811e-008, 6.341349869578607e-006, -0.0063433293235996;
+  -6.282813991510296e-006, -6.270726907855665e-008, 0.00192743280207533;
+  0.005035829276627046, -0.002489348481444859, 1]
+det(F)
+-2.06577e-019
+E
+[-0.2471341001033522, 41.55867050527036, 4.470905718566133;
+  -41.17504977476187, -0.4109583586332288, -6.851733955155549;
+  -7.765308404869766, 5.110164787791836, -0.7289937213089943]
+det(E) != 0 : -8.87243e-006
+after init map size: 0

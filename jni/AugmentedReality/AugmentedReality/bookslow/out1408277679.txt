@@ -1,0 +1,339 @@
+hello world
+IMG_20140809_193957.jpg
+IMG_20140809_194001.jpg
+IMG_20140809_194005.jpg
+IMG_20140809_194009.jpg
+IMG_20140809_194012.jpg
+IMG_20140809_194016.jpg
+IMG_20140809_194019.jpg
+IMG_20140809_194023.jpg
+IMG_20140809_194026.jpg
+IMG_20140809_194029.jpg
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 109986
+after retain keypoints is: 50384
+keyframe 1 end
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 122771
+after retain keypoints is: 53600
+keyframe 2 end
+begin match
+[32 x 52820]  [32 x 50061]0
+[32 x 52820]  [32 x 50061]22464
+end match
+begin elliminate
+end elliminate    22464  22464
+after swap matches22464  22464
+keypoints_1.size() 52820 imgpts1_good.size() 22464
+keypoints_2.size() 50061 imgpts2_good.size() 22464
+out  match22464
+=========================== Baseline triangulation ===========================
+Find camera matrices...
+before fundamentalMat 22464
+F keeping 3638 / 22464
+22464 matches before, 3638 new matches after Fundamental Matrix
+after fundamentalMat 3638
+K
+[2560, 0, 720;
+  0, 2560, 1280;
+  0, 0, 1]
+F
+[2.96729845852779e-008, 5.641620604215637e-006, -0.005785897389466929;
+  -5.671314649400482e-006, 4.475850127370398e-008, 0.001569809424941615;
+  0.004584447796846081, -0.002251805773968996, 1]
+det(F)
+-3.08429e-021
+E
+[0.1944648717780773, 36.9729247917876, 3.729258324046043;
+  -37.167527686311, 0.2933293139473464, -6.287990376950761;
+  -6.792884238041948, 4.780676973303306, -0.6766502617885666]
+----------------------- SVD ------------------------
+U:
+[-0.1695538850750284, 0.9775913683170184, 0.1247661678822583;
+  -0.9652740192718011, -0.190264261531283, 0.1790127886571744;
+  -0.1987398998058182, 0.09008122654590893, -0.9759035940343483]
+W:
+[38.34987692629005;
+  37.42639810591503;
+  9.229362615375468e-011]
+Vt:
+[0.9698569245995196, -0.1956240298756717, 0.145288625644143;
+  0.1776780128695429, 0.9757618458155997, 0.1277471878096118;
+  -0.1667575172191412, -0.09808190039826908, 0.9811074718221097]
+----------------------------------------------------
+singular value ratio: 0.97592
+det(R) == -1 [-1]: flip E's sign
+----------------------- SVD ------------------------
+U:
+[0.1695538850750284, -0.9775913683170184, -0.1247661678822583;
+  0.9652740192718011, 0.190264261531283, -0.1790127886571744;
+  0.1987398998058182, -0.09008122654590893, 0.9759035940343483]
+W:
+[38.34987692629005;
+  37.42639810591503;
+  9.229362615375468e-011]
+Vt:
+[0.9698569245995196, -0.1956240298756717, 0.145288625644143;
+  0.1776780128695429, 0.9757618458155997, 0.1277471878096118;
+  -0.1667575172191412, -0.09808190039826908, 0.9811074718221097]
+----------------------------------------------------
+singular value ratio: 0.97592
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[-0.9574440589764296, 0.0380334540271328, -0.2861019578847812, -0.1247661678822583;
+  0.04287287011806357, -0.9615399058374743, -0.2712985928638417, -0.1790127886571744;
+  -0.2854168722037623, -0.2720192380270682, 0.9189900669781989, 0.9759035940343483]
+test branch 1
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.338319s, mean reproj err = 2.94982)
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.33828s, mean reproj err = 2.93056)
+3633/3638 = 99.8626% are in front of camera
+15/3638 = 0.412314% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[-0.9574440589764296, 0.0380334540271328, -0.2861019578847812, 0.1247661678822583;
+  0.04287287011806357, -0.9615399058374743, -0.2712985928638417, 0.1790127886571744;
+  -0.2854168722037623, -0.2720192380270682, 0.9189900669781989, -0.9759035940343483]
+test branch 2
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.314062s, mean reproj err = 2.94982)
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.312918s, mean reproj err = 2.93056)
+5/3638 = 0.137438% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9990554517544136, -0.01355884832453004, 0.04128391880499045, -0.1247661678822583;
+  0.0168305862558269, 0.9966557348516529, -0.07996297614269025, -0.1790127886571744;
+  -0.04006164856904695, 0.08058227981028869, 0.9959425487921011, 0.9759035940343483]
+test branch 3
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.318225s, mean reproj err = 3.78747)
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.317275s, mean reproj err = 3.54541)
+603/3638 = 16.575% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9990554517544136, -0.01355884832453004, 0.04128391880499045, 0.1247661678822583;
+  0.0168305862558269, 0.9966557348516529, -0.07996297614269025, 0.1790127886571744;
+  -0.04006164856904695, 0.08058227981028869, 0.9959425487921011, -0.9759035940343483]
+test branch 4
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.314592s, mean reproj err = 3.78747)
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.314931s, mean reproj err = 3.54541)
+3035/3638 = 83.425% are in front of camera
+3055/3638 = 83.9747% are in front of camera
+Done. (9.39783s)
+begin triangulation
+p query index 1
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+p train index 0
+[0.9990554517544136, -0.01355884832453004, 0.04128391880499045, 0.1247661678822583;
+  0.0168305862558269, 0.9966557348516529, -0.07996297614269025, 0.1790127886571744;
+  -0.04006164856904695, 0.08058227981028869, 0.9959425487921011, -0.9759035940343483]
+getalign
+triangulate points
+3638  3638  3638
+Triangulating...before triangulate: 03638
+after triangulate: 3638
+3638
+Done. (3638points, 0.336908s, mean reproj err = 3.78747)
+triangulation reproj error 3.78747
+test triangulate
+3055/3638 = 83.9747% are in front of camera
+3035/3638 = 83.425% are in front of camera
+filtered out 633 high-error points
+add in triangulation function
+3638  3638  3638
+Triangulating...before triangulate: 03005
+after triangulate: 3005
+3005
+Done. (3005points, 0.271366s, mean reproj err = 3.08339)
+my reproj error: 3.08339
+my work begins
+0/3005 points were found in other views, adding 3005 new
+ after 3005
+after init map size: 3005
+befin track 2 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 129003
+after retain keypoints is: 50232
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 49490
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 2 map size: 3005
+befin track 3 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 18082
+after retain keypoints is: 18082
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 17010
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 3 map size: 3005
+befin track 4 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 171209
+after retain keypoints is: 51662
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 50924
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 4 map size: 3005
+befin track 5 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 32585
+after retain keypoints is: 32585
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 30951
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 5 map size: 3005
+befin track 6 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 150275
+after retain keypoints is: 53305
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 51870
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 6 map size: 3005
+befin track 7 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 16927
+after retain keypoints is: 16927
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 16202
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 7 map size: 3005
+befin track 8 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 151596
+after retain keypoints is: 53375
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 52741
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 8 map size: 3005
+befin track 9 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 6557
+after retain keypoints is: 6557
+begin third branch
+begin find 2d 3d correspondences with nothing
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 6285
+match size: 1
+-----------------------------------------------------------------
+found 1 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 1)
+failed estimated
+failed estimated
+after 9 map size: 3005
+get color: 
+3005  6010
+Pmats0
+Pmats1

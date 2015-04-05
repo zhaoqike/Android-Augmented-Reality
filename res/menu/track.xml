@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.augmentedreality.MainActivity" >
+
+    <item android:id="@+id/trk_opencam" android:title="@string/trk_open_camera"/>
+    <item android:id="@+id/trk_lod" android:title="@string/trk_lod_map"/>
+    <item android:id="@+id/trk_start" android:title="@string/trk_start_tracking"/>
+
+</menu>

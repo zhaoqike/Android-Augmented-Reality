@@ -1,0 +1,233 @@
+hello world
+IMG_20140719_175745.jpg
+IMG_20140719_175748.jpg
+IMG_20140719_175751.jpg
+IMG_20140719_175754.jpg
+IMG_20140719_175757.jpg
+IMG_20140719_175800.jpg
+keyframe 1 end
+keyframe 2 end
+F keeping 599 / 633
+633 matches before, 599 new matches after Fundamental Matrix
+=========================== Baseline triangulation ===========================
+Find camera matrices...
+before fundamentalMat 633
+F keeping 599 / 633
+633 matches before, 599 new matches after Fundamental Matrix
+after fundamentalMat 599
+K
+[640, 0, 240;
+  0, 640, 320;
+  0, 0, 1]
+F
+[2.293703574201892e-006, 0.0002116618382675228, -0.04355578292540809;
+  -0.0002125227765694423, -6.472897647777237e-007, 0.08309531656552716;
+  0.04609387327817197, -0.09424067376481965, 1]
+det(F)
+6.24687e-021
+E
+[0.9395009839930951, 86.69668895437735, 15.82495627392491;
+  -87.04932928284353, -0.2651298876529556, 20.40493917704458;
+  -13.6722728743943, -27.93533779541955, -1.957657826736888]
+----------------------- SVD ------------------------
+U:
+[0.8905195032610926, 0.3393041476760734, 0.3030638706303181;
+  -0.3089289836023898, 0.9400176298020296, -0.1446711400099165;
+  -0.3339728992029312, 0.03520725821741655, 0.9419249182216175]
+W:
+[92.82606722245542;
+  90.0894730563267;
+  1.261905099776389e-013]
+Vt:
+[0.3479073749980013, 0.9331069066507322, 0.09095031161410078;
+  -0.9101006817738315, 0.3128422420080756, 0.2717470894971418;
+  0.2251159866753294, -0.1773167571778331, 0.9580613551162214]
+----------------------------------------------------
+singular value ratio: 0.970519
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9967333446573196, -0.01572337705826432, 0.07921751739430311, 0.3030638706303181;
+  0.01331480101325824, 0.9994355959969513, 0.03084162006439348, -0.1446711400099165;
+  -0.07965774113173418, -0.0296861056405637, 0.9963801380044099, 0.9419249182216175]
+test branch 1
+Triangulating...Done. (599points, 0.0526822s, mean reproj err = 1.88124)
+Triangulating...Done. (599points, 0.0528865s, mean reproj err = 2.03601)
+599/599 = 100% are in front of camera
+599/599 = 100% are in front of camera
+Done. (0.127775s)
+begin triangulation
+p query index 1
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+p train index 0
+[0.9967333446573196, -0.01572337705826432, 0.07921751739430311, 0.3030638706303181;
+  0.01331480101325824, 0.9994355959969513, 0.03084162006439348, -0.1446711400099165;
+  -0.07965774113173418, -0.0296861056405637, 0.9963801380044099, 0.9419249182216175]
+getalign
+triangulate points
+Triangulating...Done. (599points, 0.0531841s, mean reproj err = 1.88124)
+triangulation reproj error 1.88124
+test triangulate
+599/599 = 100% are in front of camera
+599/599 = 100% are in front of camera
+filtered out 2 high-error points
+0/597 points were found in other views, adding 597 new
+ after 597
+after init map size: 597
+F keeping 359 / 393
+393 matches before, 359 new matches after Fundamental Matrix
+-----------------------------------------------------------------
+find 2d 3d correspondences
+query frame keypoints: 457
+train frame keypoints: 891
+match size: 393
+-----------------------------------------------------------------
+found 287 3d-2d point correspondences
+solve PnP Racsac time: 2.31175
+-------------------------------------------------------------------------
+find pose estimation
+3d point: 287
+2d point: 287
+inliers size: 133
+projected point: 0
+--------------------------------------------------------------------------
+(133/287)
+found t = [-0.4553328532727665;
+  0.4428655278060854;
+  0.292131345192967]
+R = 
+[0.9901203331346373, -0.02651483944755795, -0.1376905559667223;
+  0.02009194595920627, 0.9986534126436741, -0.04782964690143362;
+  0.138773339013397, 0.04459063471418307, 0.9893197843340944]
+frame pose [0.9901203331346373, -0.02651483944755795, -0.1376905559667223, -0.4553328532727665;
+  0.02009194595920627, 0.9986534126436741, -0.04782964690143362, 0.4428655278060854;
+  0.138773339013397, 0.04459063471418307, 0.9893197843340944, 0.292131345192967]
+next to triangulate ,inliers size: 133
+match size: 393
+match size: 133
+begin triangulation
+p query index 2
+[0.9901203331346373, -0.02651483944755795, -0.1376905559667223, -0.4553328532727665;
+  0.02009194595920627, 0.9986534126436741, -0.04782964690143362, 0.4428655278060854;
+  0.138773339013397, 0.04459063471418307, 0.9893197843340944, 0.292131345192967]
+p train index 1
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+getalign
+triangulate points
+Triangulating...Done. (133points, 0.0116999s, mean reproj err = 13.0328)
+triangulation reproj error 13.0328
+test triangulate
+127/133 = 95.4887% are in front of camera
+127/133 = 95.4887% are in front of camera
+filtered out 9 high-error points
+98/124 points were found in other views, adding 26 new
+before triangulation: 623 after 623
+======================== Bundle Adjustment ==========================
+N (cams) = 2 M (points) = 124 K (measurements) = 248
+intrinsic before bundle = [ 640 0 240 
+0 640 320 
+0 0 1 ]
+Read the 3D points.
+Read the cameras.
+Read 248 valid 2D measurements.
+mean reprojection error (in pixels): 2.01379
+K0 = [ 1 0 0.375 
+0 1 0.5 
+0 0 1 ]
+optimizer status = 0
+refined K = [ 1.56841 0 0.414786 
+0 1.56841 0.359556 
+0 0 1 ]
+Knew = [ 1003.78 0 265.463 
+0 1003.78 230.116 
+0 0 1 ]
+mean reprojection error (in pixels): 0.366269
+use new K 
+[1003.782296536165, 0, 265.4630580007742;
+  0, 1003.782296536165, 230.115752016003;
+  0, 0, 1]
+after 2 map size: 623
+F keeping 315 / 339
+339 matches before, 315 new matches after Fundamental Matrix
+-----------------------------------------------------------------
+find 2d 3d correspondences
+query frame keypoints: 460
+train frame keypoints: 457
+match size: 339
+-----------------------------------------------------------------
+found 86 3d-2d point correspondences
+solve PnP Racsac time: 1.5215
+-------------------------------------------------------------------------
+find pose estimation
+3d point: 86
+2d point: 86
+inliers size: 76
+projected point: 0
+--------------------------------------------------------------------------
+(76/86)
+found t = [-0.9895887716893785;
+  3.042038349417391;
+  7.336016953602222]
+R = 
+[0.973002265469924, -0.08368564912606846, -0.2150890595096461;
+  0.06977057052030761, 0.9949970017972503, -0.07150548163430252;
+  0.219996951978127, 0.05456810922903001, 0.9739731323683947]
+frame pose [0.973002265469924, -0.08368564912606846, -0.2150890595096461, -0.9895887716893785;
+  0.06977057052030761, 0.9949970017972503, -0.07150548163430252, 3.042038349417391;
+  0.219996951978127, 0.05456810922903001, 0.9739731323683947, 7.336016953602222]
+next to triangulate ,inliers size: 76
+match size: 339
+match size: 76
+begin triangulation
+p query index 3
+[0.973002265469924, -0.08368564912606846, -0.2150890595096461, -0.9895887716893785;
+  0.06977057052030761, 0.9949970017972503, -0.07150548163430252, 3.042038349417391;
+  0.219996951978127, 0.05456810922903001, 0.9739731323683947, 7.336016953602222]
+p train index 2
+[0.9901203331346373, -0.02651483944755795, -0.1376905559667223, -0.4553328532727665;
+  0.02009194595920627, 0.9986534126436741, -0.04782964690143362, 0.4428655278060854;
+  0.138773339013397, 0.04459063471418307, 0.9893197843340944, 0.292131345192967]
+getalign
+triangulate points
+Triangulating...Done. (76points, 0.00683231s, mean reproj err = 71.9991)
+triangulation reproj error 71.9991
+test triangulate
+54/76 = 71.0526% are in front of camera
+Triangulation did not succeed
+after 3 map size: 623
+F keeping 199 / 277
+277 matches before, 199 new matches after Fundamental Matrix
+-----------------------------------------------------------------
+find 2d 3d correspondences
+query frame keypoints: 478
+train frame keypoints: 460
+match size: 277
+-----------------------------------------------------------------
+found 0 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 0)
+lost a frame
+after 4 map size: 623
+F keeping 224 / 269
+269 matches before, 224 new matches after Fundamental Matrix
+-----------------------------------------------------------------
+find 2d 3d correspondences
+query frame keypoints: 403
+train frame keypoints: 460
+match size: 269
+-----------------------------------------------------------------
+found 0 3d-2d point correspondences
+couldn't find [enough] corresponding cloud points... (only 0)
+lost a frame
+after 5 map size: 623
+get color: 
+623  1246
+Pmats0
+Pmats1
+Pmats2
+Pmats3

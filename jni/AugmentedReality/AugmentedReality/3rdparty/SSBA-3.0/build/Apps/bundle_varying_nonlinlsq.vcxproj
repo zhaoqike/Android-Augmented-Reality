@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{4699D4AE-5C30-4FD2-9F65-9EBC528C3734}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>bundle_varying_nonlinlsq</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bundle_varying_nonlinlsq.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bundle_varying_nonlinlsq</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bundle_varying_nonlinlsq.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bundle_varying_nonlinlsq</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">bundle_varying_nonlinlsq.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">bundle_varying_nonlinlsq</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">bundle_varying_nonlinlsq.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">bundle_varying_nonlinlsq</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\Debug\V3D.lib;..\Debug\colamd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0;F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/Debug/bundle_varying_nonlinlsq.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/Debug/bundle_varying_nonlinlsq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\Release\V3D.lib;..\Release\colamd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0;F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/Release/bundle_varying_nonlinlsq.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/Release/bundle_varying_nonlinlsq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\MinSizeRel\V3D.lib;..\MinSizeRel\colamd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0;F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/MinSizeRel/bundle_varying_nonlinlsq.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/MinSizeRel/bundle_varying_nonlinlsq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;V3DLIB_ENABLE_SUITESPARSE;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\SuiteSparse_config;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\.;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\COLAMD\Include;\usr\include\suitesparse;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\COLAMD\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\RelWithDebInfo\V3D.lib;..\RelWithDebInfo\colamd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0;F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/RelWithDebInfo/bundle_varying_nonlinlsq.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/RelWithDebInfo/bundle_varying_nonlinlsq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\Apps\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" "-HF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0" "-BF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build" --check-stamp-file "F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" "-HF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0" "-BF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build" --check-stamp-file "F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" "-HF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0" "-BF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build" --check-stamp-file "F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" "-HF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0" "-BF:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build" --check-stamp-file "F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Apps/CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\Apps\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\users\zhaoqike\documents\visual studio 2013\Projects\AugmentedReality\AugmentedReality\3rdparty\SSBA-3.0\build\Apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Apps\bundle_varying_nonlinlsq.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/V3D.vcxproj">
+      <Project>44B3B9D2-BBD3-4A3F-B88E-1A14554C3F37</Project>
+    </ProjectReference>
+    <ProjectReference Include="F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/ZERO_CHECK.vcxproj">
+      <Project>C1B49C21-2CAD-412F-BAA1-7B9F1F7763F0</Project>
+    </ProjectReference>
+    <ProjectReference Include="F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/colamd.vcxproj">
+      <Project>9F10EDFA-8683-49FE-89B3-2889BFC641E6</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

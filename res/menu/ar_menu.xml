@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:id="@+id/shift_mode" android:title="@string/shift_mode">
+        <menu>
+            <group>
+            	<item android:id="@+id/is_preprocess" android:title="@string/is_preprocess"/>
+                <item android:id="@+id/is_track" android:title="@string/is_track"/>
+            </group>
+        </menu>
+    </item>
+    <item android:id="@+id/preprocess" android:title="@string/preprocess">
+    	<menu>
+    		<group>
+    			<item android:id="@+id/pre_opencam" android:title="@string/pre_open_camera"/>
+    		    <item android:id="@+id/pre_first" android:title="@string/pre_first_frame"/>
+    		    <item android:id="@+id/pre_second" android:title="@string/pre_second_frame"/>
+    		    <item android:id="@+id/pre_start" android:title="@string/pre_start_preprocessing"/>
+    		    <item android:id="@+id/pre_store" android:title="@string/pre_store_map"/>
+    		</group>
+		</menu>
+	</item>
+    <item android:id="@+id/track" android:title="@string/tracking">
+        <menu>
+            <group>
+            	<item android:id="@+id/trk_opencam" android:title="@string/trk_open_camera"/>
+                <item android:id="@+id/trk_lod" android:title="@string/trk_lod_map"/>
+                <item android:id="@+id/trk_start" android:title="@string/trk_start_tracking"/>
+            </group>
+        </menu>
+    </item>
+    
+
+</menu>

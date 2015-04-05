@@ -1,0 +1,21 @@
+# CMake generation dependency list for this directory.
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/CMakeLists.txt
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/3.0.0/CMakeSystem.cmake
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/3.0.0/CMakeCCompiler.cmake
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/3.0.0/CMakeCXXCompiler.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeSystemSpecificInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeGenericSystem.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/Platform/Windows.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/Platform/WindowsPaths.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeCInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/Platform/Windows-MSVC-C.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/Platform/Windows-MSVC.cmake
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/3.0.0/CMakeRCCompiler.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeRCInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeCommonLanguageInclude.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeCXXInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/Platform/Windows-MSVC.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.0/Modules/CMakeCommonLanguageInclude.cmake
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Config/v3d_macros.cmake
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/Config/local_config.cmake

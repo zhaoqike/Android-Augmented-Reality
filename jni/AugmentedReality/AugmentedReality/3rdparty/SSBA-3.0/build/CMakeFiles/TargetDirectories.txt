@@ -1,0 +1,7 @@
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/ALL_BUILD.dir
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/V3D.dir
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/ZERO_CHECK.dir
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/CMakeFiles/bundle_common.dir
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/CMakeFiles/bundle_varying.dir
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/Apps/CMakeFiles/bundle_varying_nonlinlsq.dir
+F:/users/zhaoqike/documents/visual studio 2013/Projects/AugmentedReality/AugmentedReality/3rdparty/SSBA-3.0/build/CMakeFiles/colamd.dir

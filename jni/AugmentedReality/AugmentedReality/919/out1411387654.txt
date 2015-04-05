@@ -1,0 +1,338 @@
+hello world
+20140918_104918.jpg
+20140918_104921.jpg
+20140918_104924.jpg
+20140918_104927.jpg
+20140918_104930.jpg
+20140918_104932.jpg
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 2070
+after retain keypoints is: 2070
+keyframe 1 end
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 2117
+after retain keypoints is: 2117
+keyframe 2 end
+begin match
+[32 x 1877]  [32 x 1840]0
+begin maskmatch
+0
+1404
+[32 x 1877]  [32 x 1840]1404
+end match
+begin elliminate
+end elliminate    1404  1404
+after swap matches1404  1404
+keypoints_1.size() 1877 imgpts1_good.size() 1404
+keypoints_2.size() 1840 imgpts2_good.size() 1404
+F keeping 1269 / 1404
+1404 matches before, 1269 new matches after Fundamental Matrix
+after mask match: 1269
+out  match1269
+=========================== Baseline triangulation ===========================
+Find camera matrices...
+before fundamentalMat 1269
+F keeping 1261 / 1269
+1269 matches before, 1261 new matches after Fundamental Matrix
+after fundamentalMat 1261
+K
+[640, 0, 320;
+  0, 640, 240;
+  0, 0, 1]
+F
+[-9.194502803673229e-007, -0.0001927253484595281, 0.01292897260332615;
+  0.0001930751404793079, -1.361215621528502e-006, -0.02981933168201323;
+  -0.01835296385160967, 0.02778005517011517, 1]
+det(F)
+-3.68062e-020
+E
+[-0.3766068348384555, -78.9403027290227, -21.51637447467401;
+  79.08357754032451, -0.5575539185780742, 20.24833377420701;
+  17.72214129517228, -21.89999877510442, -1.370797263696828]
+----------------------- SVD ------------------------
+U:
+[0.957648149717689, 0.1240709978448687, 0.2598391980361418;
+  -0.1820020653024159, 0.9600979036416177, 0.2123376171304234;
+  0.2231261292810455, 0.2506359968495143, -0.9420171588221249]
+W:
+[84.75186058509533;
+  83.49773154230527;
+  8.716672399065171e-013]
+Vt:
+[-0.1274279811449072, -0.9484396010297033, -0.290214460046274;
+  0.9619789195384061, -0.1894475000694675, 0.1967389211141253;
+  -0.2415753877882723, -0.2541101491795364, 0.9365198151127928]
+----------------------------------------------------
+singular value ratio: 0.985202
+det(R) == -1 [-1]: flip E's sign
+----------------------- SVD ------------------------
+U:
+[-0.957648149717689, -0.1240709978448687, -0.2598391980361418;
+  0.1820020653024159, -0.9600979036416177, -0.2123376171304234;
+  -0.2231261292810455, -0.2506359968495143, 0.9420171588221249]
+W:
+[84.75186058509533;
+  83.49773154230527;
+  8.716672399065171e-013]
+Vt:
+[-0.1274279811449072, -0.9484396010297033, -0.290214460046274;
+  0.9619789195384061, -0.1894475000694675, 0.1967389211141253;
+  -0.2415753877882723, -0.2541101491795364, 0.9365198151127928]
+----------------------------------------------------
+singular value ratio: 0.985202
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9998182041655566, 0.002277577160832212, -0.01893069627451646, -0.2598391980361418;
+  -0.00144327037054779, 0.9990318525237721, 0.04396901879229673, -0.2123376171304234;
+  0.01901251140168048, -0.04393370329480875, 0.99885351985414, 0.9420171588221249]
+test branch 1
+Triangulating...before triangulate: 01261
+after triangulate: 1261
+1261
+Done. (1261points, 0.123967s, mean reproj err = 2.54535)
+Triangulating...before triangulate: 01261
+after triangulate: 1261
+1261
+Done. (1261points, 0.116336s, mean reproj err = 1.09578)
+22/1261 = 1.74465% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9998182041655566, 0.002277577160832212, -0.01893069627451646, 0.2598391980361418;
+  -0.00144327037054779, 0.9990318525237721, 0.04396901879229673, 0.2123376171304234;
+  0.01901251140168048, -0.04393370329480875, 0.99885351985414, -0.9420171588221249]
+test branch 2
+Triangulating...before triangulate: 01261
+after triangulate: 1261
+1261
+Done. (1261points, 0.113348s, mean reproj err = 2.54535)
+Triangulating...before triangulate: 01261
+after triangulate: 1261
+1261
+Done. (1261points, 0.111052s, mean reproj err = 1.09578)
+1239/1261 = 98.2554% are in front of camera
+1239/1261 = 98.2554% are in front of camera
+Done. (0.51809s)
+begin triangulation
+p query index 1
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+p train index 0
+[0.9998182041655566, 0.002277577160832212, -0.01893069627451646, 0.2598391980361418;
+  -0.00144327037054779, 0.9990318525237721, 0.04396901879229673, 0.2123376171304234;
+  0.01901251140168048, -0.04393370329480875, 0.99885351985414, -0.9420171588221249]
+getalign
+triangulate points
+1261  1261  1261
+Triangulating...before triangulate: 01261
+after triangulate: 1261
+1261
+Done. (1261points, 0.117175s, mean reproj err = 2.54535)
+triangulation reproj error 2.54535
+test triangulate
+1239/1261 = 98.2554% are in front of camera
+1239/1261 = 98.2554% are in front of camera
+filtered out 29 high-error points
+add in triangulation function
+1261  1261  1261
+Triangulating...before triangulate: 01232
+after triangulate: 1232
+1232
+Done. (1232points, 0.117532s, mean reproj err = 0.668763)
+my reproj error: 0.668763
+my work begins
+0/1232 points were found in other views, adding 1232 new
+ after 1232
+after init map size: 1232
+begin track 2 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 2220
+after retain keypoints is: 2220
+begin third branch
+begin find 2d 3d correspondences with nothing
+nowframe descriptor size
+[32 x 1965]
+cloud descriptor size
+[32 x 1232]
+matches size
+0
+begin maskmatch
+0
+1080
+1080
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 1965
+match size: 1080
+-----------------------------------------------------------------
+found 1080 3d-2d point correspondences
+maxVal467  2.802
+solve PnP Racsac time: 31.3091
+-------------------------------------------------------------------------
+find pose estimation
+3d point: 1080
+2d point: 1080
+inliers size: 798
+projected point: 1080
+--------------------------------------------------------------------------
+after projection and compute distance inliers size is: 937
+(937/1080)
+found t = [0.1112605998074395;
+  -0.1528864313703671;
+  1.124933795579786]
+R = 
+[0.9999947394896209, -0.003243008508254073, 6.236105093822118e-005;
+  0.003242660635148882, 0.9990532360042244, -0.04338336987248515;
+  7.83906278727486e-005, 0.04338334386954269, 0.9990584964503362]
+success using third branch
+after 2 map size: 1232
+begin track 3 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 2340
+after retain keypoints is: 2340
+begin third branch
+begin find 2d 3d correspondences with nothing
+nowframe descriptor size
+[32 x 2079]
+cloud descriptor size
+[32 x 1232]
+matches size
+0
+begin maskmatch
+0
+1046
+1046
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 2079
+match size: 1046
+-----------------------------------------------------------------
+found 1046 3d-2d point correspondences
+maxVal472  2.832
+solve PnP Racsac time: 2.17192
+-------------------------------------------------------------------------
+find pose estimation
+3d point: 1046
+2d point: 1046
+inliers size: 337
+projected point: 1046
+--------------------------------------------------------------------------
+after projection and compute distance inliers size is: 735
+(735/1046)
+found t = [0.2995649755592407;
+  0.383089619351471;
+  0.6091293219439748]
+R = 
+[0.9999440737684144, -0.003296210779198116, 0.01004909597559672;
+  0.004441643809550702, 0.9932178228983988, -0.1161835964206395;
+  -0.009597975604091515, 0.1162217332148512, 0.9931769165626229]
+success using third branch
+after 3 map size: 1232
+begin track 4 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 2398
+after retain keypoints is: 2398
+begin third branch
+begin find 2d 3d correspondences with nothing
+nowframe descriptor size
+[32 x 2106]
+cloud descriptor size
+[32 x 1232]
+matches size
+0
+begin maskmatch
+0
+987
+987
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 2106
+match size: 987
+-----------------------------------------------------------------
+found 987 3d-2d point correspondences
+maxVal585  3.51
+solve PnP Racsac time: 16.2849
+-------------------------------------------------------------------------
+find pose estimation
+3d point: 987
+2d point: 987
+inliers size: 330
+projected point: 987
+--------------------------------------------------------------------------
+after projection and compute distance inliers size is: 514
+(514/987)
+found t = [0.8685820332337855;
+  -1.209668862785301;
+  4.800846074090785]
+R = 
+[0.9999947468110627, -0.003239828047583682, -9.932019318407246e-005;
+  0.003188631239057201, 0.9887723770108937, -0.1493955122855044;
+  0.0005822208343855061, 0.1493944107871813, 0.988777513419703]
+success using third branch
+after 4 map size: 1232
+begin track 5 map
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 2513
+after retain keypoints is: 2513
+begin third branch
+begin find 2d 3d correspondences with nothing
+nowframe descriptor size
+[32 x 2215]
+cloud descriptor size
+[32 x 1232]
+matches size
+0
+begin maskmatch
+0
+985
+985
+-----------------------------------------------------------------
+find 2d 3d correspondences with nothing
+query frame keypoints: 2215
+match size: 985
+-----------------------------------------------------------------
+found 985 3d-2d point correspondences
+maxVal598  3.588
+solve PnP Racsac time: 19.9713
+-------------------------------------------------------------------------
+find pose estimation
+3d point: 985
+2d point: 985
+inliers size: 270
+projected point: 985
+--------------------------------------------------------------------------
+after projection and compute distance inliers size is: 474
+(474/985)
+found t = [0.3608735874098676;
+  -0.5023118611528528;
+  4.925074103371557]
+R = 
+[0.999856830961756, -0.01638098186357731, -0.004240402374717407;
+  0.0150514014774846, 0.9755084886179585, -0.2194462210835949;
+  0.007731293079293523, 0.2193509791806081, 0.9756153827404683]
+success using third branch
+after 5 map size: 1232
+get color: 
+before get rgb, rgb size: 0 pcloud size: 1232
+after get rgb, rgb size: 2464 pcloud size: 1232
+1232  2464
+in write cloud begin write pmats
+begin write pmats

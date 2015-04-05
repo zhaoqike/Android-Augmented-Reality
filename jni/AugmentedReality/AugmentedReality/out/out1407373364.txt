@@ -1,0 +1,5 @@
+hello world
+keyframe 1 end
+keyframe 2 end
+copy keyframe use: 4.26076
+copy keyframe use: 972.575

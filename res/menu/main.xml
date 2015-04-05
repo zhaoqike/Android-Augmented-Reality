@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.augmentedreality.MainActivity" >
+
+    <item android:id="@+id/is_preprocess" android:title="@string/is_preprocess"/>
+    <item android:id="@+id/is_track" android:title="@string/is_track"/>
+    <item android:id="@+id/exit" android:title="@string/exit"/>
+
+</menu>

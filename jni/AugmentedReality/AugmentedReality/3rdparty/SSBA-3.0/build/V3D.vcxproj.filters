@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Math\v3d_nonlinlsq.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Math\v3d_optimization.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Math\v3d_optimization_lm.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Geometry\v3d_metricbundle.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Geometry\v3d_stereobundle.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Base\v3d_exception.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\v3d_serialization.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\v3d_vrmlio.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Math\v3d_linear.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Math\v3d_linearbase.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Math\v3d_mathutilities.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Math\v3d_nonlinlsq.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Math\v3d_optimization.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Geometry\v3d_cameramatrix.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Geometry\v3d_distortion.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Geometry\v3d_metricbundle.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Geometry\v3d_stereobundle.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{010F55F8-DE3B-4814-BC0C-68098AF3B68F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{484224FF-6653-4743-9262-69F7FBB31782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{7D1CC308-8292-45CD-BD82-ACE96010C392}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

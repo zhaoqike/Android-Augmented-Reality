@@ -1,0 +1,147 @@
+hello world
+20140918_104913.jpg
+20140918_104916.jpg
+20140918_104918.jpg
+20140918_104921.jpg
+20140918_104924.jpg
+20140918_104927.jpg
+20140918_104930.jpg
+20140918_104932.jpg
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 1849
+after retain keypoints is: 1849
+keyframe 1 end
+/////////////////////////////////////////
+begin make keyframe lite:50000
+num is : 50000
+before retain keypoints is: 1954
+after retain keypoints is: 1954
+keyframe 2 end
+begin match
+[32 x 1714]  [32 x 1668]0
+begin maskmatch
+0
+1245
+[32 x 1714]  [32 x 1668]1245
+end match
+begin elliminate
+end elliminate    1245  1245
+after swap matches1245  1245
+keypoints_1.size() 1714 imgpts1_good.size() 1245
+keypoints_2.size() 1668 imgpts2_good.size() 1245
+F keeping 1112 / 1245
+1245 matches before, 1112 new matches after Fundamental Matrix
+after mask match: 1112
+out  match1112
+=========================== Baseline triangulation ===========================
+Find camera matrices...
+before fundamentalMat 1112
+F keeping 1108 / 1112
+1112 matches before, 1108 new matches after Fundamental Matrix
+after fundamentalMat 1108
+K
+[640, 0, 320;
+  0, 640, 240;
+  0, 0, 1]
+F
+[-7.856383447531282e-008, -6.366015403647465e-005, 0.02131913320193757;
+  6.290168757393244e-005, -3.579659227831206e-007, -0.02437473034474308;
+  -0.02366718707009929, 0.02456929697174065, 1]
+det(F)
+1.00301e-019
+E
+[-0.03217974660108813, -26.07519909334002, 3.849955715936993;
+  25.76453123028273, -0.1466228419719662, -2.772545371233694;
+  -5.501390386808069, 2.631766949504519, 0.208404754541843]
+----------------------- SVD ------------------------
+U:
+[0.6823501642356424, -0.7245524587801676, 0.09706692455829284;
+  0.6980188816152479, 0.6852205049156591, 0.2079483122117791;
+  -0.2171817079686742, -0.07413901886822082, 0.9733116210161404]
+W:
+[26.61602900922586;
+  26.36438324148642;
+  2.398175098393067e-011]
+Vt:
+[0.7197532273914278, -0.6938049823532314, 0.02428864181990514;
+  0.6859848961034026, 0.7053934790958201, -0.1784510071899254;
+  0.1066771483384674, 0.1451023297915201, 0.9836489718956887]
+----------------------------------------------------
+singular value ratio: 0.990545
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[-0.9792260544308831, 0.03545738646528657, 0.1996474594598594, 0.09706692455829284;
+  0.03654259285333009, -0.9376135831200907, 0.3457533913879374, 0.2079483122117791;
+  0.1994516814451076, 0.3458663650801503, 0.9168399447422452, 0.9733116210161404]
+test branch 1
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.105381s, mean reproj err = 0.379877)
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.103384s, mean reproj err = 0.382673)
+1108/1108 = 100% are in front of camera
+0/1108 = 0% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[-0.9792260544308831, 0.03545738646528657, 0.1996474594598594, -0.09706692455829284;
+  0.03654259285333009, -0.9376135831200907, 0.3457533913879374, -0.2079483122117791;
+  0.1994516814451076, 0.3458663650801503, 0.9168399447422452, -0.9733116210161404]
+test branch 2
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.0978054s, mean reproj err = 0.379877)
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.0971614s, mean reproj err = 0.382673)
+0/1108 = 0% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9999356998506108, -0.007288112667074567, -0.008687898366177158, 0.09706692455829284;
+  0.007824073043769676, 0.9979611522763778, 0.06334289564118292, 0.2079483122117791;
+  0.00820853490427835, -0.06340679743494432, 0.9979540059510602, 0.9733116210161404]
+test branch 3
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.0988747s, mean reproj err = 1.02091)
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.0976537s, mean reproj err = 2.10352)
+702/1108 = 63.3574% are in front of camera
+P
+[1, 0, 0, 0;
+  0, 1, 0, 0;
+  0, 0, 1, 0]
+Testing P1 
+[0.9999356998506108, -0.007288112667074567, -0.008687898366177158, -0.09706692455829284;
+  0.007824073043769676, 0.9979611522763778, 0.06334289564118292, -0.2079483122117791;
+  0.00820853490427835, -0.06340679743494432, 0.9979540059510602, -0.9733116210161404]
+test branch 4
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.0976428s, mean reproj err = 1.02091)
+Triangulating...before triangulate: 01108
+after triangulate: 1108
+1108
+Done. (1108points, 0.0958837s, mean reproj err = 2.10352)
+406/1108 = 36.6426% are in front of camera
+Shit.
+after init map size: 0
