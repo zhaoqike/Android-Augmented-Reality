@@ -34,6 +34,13 @@ public class CameraView extends JavaCameraView {
         mMaxWidth = resolution.width;
         connectCamera(getWidth(), getHeight());
     }
+    
+    public void setResolution(int width,int height) {
+        //disconnectCamera();
+        mMaxHeight = height;
+        mMaxWidth = width;
+        //connectCamera(getWidth(), getHeight());
+    }
 
     public Size getResolution() {
         return mCamera.getParameters().getPreviewSize();

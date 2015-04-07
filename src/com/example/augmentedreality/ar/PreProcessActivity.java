@@ -5,6 +5,7 @@ import java.util.ListIterator;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import com.example.augmentedreality.gljni.GLJNIView;
 import com.example.augmentedreality.ar.ARCubeRenderer;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -27,12 +28,15 @@ import com.example.augmentedreality.osg.osgViewer;
 
 
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.hardware.Camera.Size;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,7 +54,7 @@ public class PreProcessActivity extends ARActivity implements
     private Mat mGray;
     //private CameraBridgeViewBase mCameraView;
     private CameraView mCameraView;
-    GLSurfaceView glSurfaceView;
+    GLJNIView glSurfaceView;
     private ARCubeRenderer mARRenderer;
     
     //menu resolution
@@ -104,16 +108,26 @@ public class PreProcessActivity extends ARActivity implements
         
         //mCameraView = new NativeCameraView(this,0);
         mCameraView=new CameraView(this, 0);
+        mCameraView.setResolution(640,480);
         mCameraView.setCvCameraViewListener(this);
         mCameraView.setLayoutParams(new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT));
         layout.addView(mCameraView);
         
-        glSurfaceView = new GLSurfaceView(this);
-        glSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
-        glSurfaceView.getHolder().setFormat(
-                PixelFormat.TRANSLUCENT);
+        glSurfaceView = new GLJNIView(this);
+        glSurfaceView.setHandler(new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                
+                // œ‘ æfps
+                //mTextView.setText("fps:"+msg.what);
+            }
+        }
+        );
+        //glSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+        glSurfaceView.getHolder().setFormat(PixelFormat.TRANSLUCENT);
         
         glSurfaceView.setZOrderOnTop(true);
         glSurfaceView.setLayoutParams(new FrameLayout.LayoutParams(

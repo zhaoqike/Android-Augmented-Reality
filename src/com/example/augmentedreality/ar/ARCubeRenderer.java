@@ -8,6 +8,7 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
 import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL;
 import javax.microedition.khronos.opengles.GL10;
 
 import org.opencv.calib3d.Calib3d;
@@ -34,6 +35,11 @@ public class ARCubeRenderer implements Renderer{
 	boolean m_isTextureInitialized=false;
 	int[] m_backgroundTextureId=new int[1];
 	int backgroundTexture;
+	
+	int screenWidth=640;
+	int screenHeight=480;
+	
+	static float PI=3.141592653f;
 	
 	
 	//int cameraWidth=0;
@@ -115,6 +121,65 @@ public class ARCubeRenderer implements Renderer{
 		// 装载纹理
 		//loadTexture(gl);
 	}
+	
+	
+	static void _gluPerspective(GL10 gl, float fovy, float aspect, float zNear, float zFar)
+	{
+		float top = zNear * ((float) Math.tan(fovy * PI / 360.0));
+		float bottom = -top;
+		float left = bottom * aspect;
+		float right = top * aspect;
+		gl.glFrustumf(left, right, bottom, top, zNear, zFar);
+	}
+
+	void resize(GL10 gl, int width, int height)
+	{
+		// 防止被零除
+		if (height==0)								
+		{
+			height=1;
+		}
+
+		int xstart=(width-screenWidth)/2;
+		int ystart=(height-screenHeight)/2;
+		// 重置当前的视口
+		//glViewport(0, 0, width, height);
+		//glViewport(xstart, ystart, 640, 480);
+
+
+		//scale window to fit parent window
+		double scalew=(double)width/(double)screenWidth;
+		double scaleh=(double)height/(double)screenHeight;
+		int dispw=width;
+		int disph=height;
+		if(scalew>scaleh)
+		{
+			dispw=(int)(scaleh*(double)screenWidth);
+		}
+		else
+		{
+			disph=(int)(scalew*(double)screenHeight);
+		}
+		int startx=(width-dispw)/2;
+		int starty=(height-disph)/2;
+		gl.glViewport(startx, starty, dispw, disph);
+
+
+		// 选择投影矩阵	
+		gl.glMatrixMode(GL10.GL_PROJECTION);	
+		// 重置投影矩阵	
+		gl.glLoadIdentity();							
+
+		// 设置视口的大小
+		//_gluPerspective(45.0f,(float)width/(float)height,0.1f,100.0f);
+		_gluPerspective(gl, 45.0f,(float)screenWidth/(float)screenHeight,0.1f,100.0f);
+
+		// 选择模型观察矩阵
+		gl.glMatrixMode(GL10.GL_MODELVIEW);	
+
+		// 重置模型观察矩阵
+		gl.glLoadIdentity();							
+	}
 
 	@Override
 	public void onSurfaceChanged(GL10 gl, int width, int height)
@@ -148,7 +213,7 @@ public class ARCubeRenderer implements Renderer{
 		int starty=(height-cameraHeight)/2;
 		Log.e(TAG,""+startx+"  "+starty);*/
 		// 设置3D视窗的大小及位置
-		gl.glViewport(0, 0, width, height);
+		/*gl.glViewport(0, 0, width, height);
 		// 将当前矩阵模式设为投影矩阵
 		gl.glMatrixMode(GL10.GL_PROJECTION);
 		// 初始化单位矩阵
@@ -173,7 +238,8 @@ public class ARCubeRenderer implements Renderer{
 		float bottom = (v0 - h)*znear / fy;
 		float left = -u0*znear / fx;
 		float right = (w - u0)*znear / fx;
-		gl.glFrustumf(left, right, bottom, top, znear, zfar);
+		gl.glFrustumf(left, right, bottom, top, znear, zfar);*/
+		resize(gl, width, height);
 	}
 
 	/*public void setSize(int camWidth,int camHeight)

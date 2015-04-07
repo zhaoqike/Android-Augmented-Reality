@@ -125,6 +125,7 @@ public class MainActivity extends ARActivity  implements CvCameraViewListener2,S
         }
 
         mOpenCvCameraView.setVisibility( SurfaceView.VISIBLE );
+        //mOpenCvCameraView.setResolution(640,480);
         mOpenCvCameraView.setCvCameraViewListener(this);/**/
         //int height=mOpenCvCameraView.getMinimumHeight();
         //int width=mOpenCvCameraView.getMinimumWidth();
