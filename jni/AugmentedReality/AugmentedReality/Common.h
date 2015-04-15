@@ -13,6 +13,8 @@
 using namespace std;
 using namespace cv;
 #include "State.h"
+#include "CloudPoint.h"
+#include "MyKeyPoint.h"
 
 #define USE_SYS_TRIANGULATION 0
 
@@ -44,14 +46,14 @@ struct CloudPointHeader
 	MatHeader descriptorHeader;
 };
 
-struct CloudPoint {
-	Point3d pt;
-	vector<int> imgpt_for_img;
-	double reprojection_error;
-	//Matx<uchar, 1, descriptorLen> descriptor;
-	//Mat_<int> descriptor = (Mat_<int>(32, 1));
-	Mat descriptor;
-};
+//struct CloudPoint {
+//	Point3d pt;
+//	vector<int> imgpt_for_img;
+//	double reprojection_error;
+//	//Matx<uchar, 1, descriptorLen> descriptor;
+//	//Mat_<int> descriptor = (Mat_<int>(32, 1));
+//	Mat descriptor;
+//};
 //struct CPoint {
 //	Point3d pt;
 //	vector<int> imgpt_for_img;

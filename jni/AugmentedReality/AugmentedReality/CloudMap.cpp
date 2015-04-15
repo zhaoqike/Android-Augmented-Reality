@@ -1,5 +1,9 @@
 #include "StdAfx.h"
 #include "CloudMap.h"
+#include "YamlStorage.h"
+
+
+
 
 
 CloudMap::CloudMap(void)
@@ -95,10 +99,10 @@ int CloudMap::MakeKeyFrameLite(KeyFrame& keyframe,Mat& image,int num)
 	FeatureExtractor extractor(num);
 	extractor.ExtractFeatures(keyframe, image);
 	keyframe.indexInMap.resize(keyframe.keyPoints.size());
-	cerr<<"keypoints size"<<endl;
-	cerr<<keyframe.keyPoints.size()<<endl;
-	cerr<<"descriptores size"<<endl;
-	cerr<<keyframe.descriptors.rows<<endl;
+	cout<<"keypoints size"<<endl;
+	cout<<keyframe.keyPoints.size()<<endl;
+	cout<<"descriptores size"<<endl;
+	cout<<keyframe.descriptors.rows<<endl;
 	if(keyframe.keyPoints.size()>200)
 	{
 		threshold-=5;
@@ -781,12 +785,18 @@ double CloudMap::ComputeDistance(KeyFrame& keyframe1,KeyFrame& keyframe2)
 
 int CloudMap::StoreMap(string filename)
 {
-	fstream file;
+	FileStorage fs(filename,FileStorage::WRITE);
+	fs << "mappoints" << pcloud;
+	fs << "keyframes" << keyFrames;
+	fs.release();
+
+
+	/*fstream file;
 	file.open(filename.c_str(),ios::out|ios::binary);
 	StoreMapHeaderInfo(file);
 
 	StoreMapPoints(file);
-	StoreKeyFrames(file);
+	StoreKeyFrames(file);*/
 	return 0;
 }
 
@@ -797,6 +807,7 @@ int CloudMap::StoreKeyFrame(fstream &file,KeyFrame &keyframe)
 	for(int i=0;i<keyframe.keyPoints.size();i++)
 	{
 		file.write((char*)(&keyframe.keyPoints[i]),sizeof(keyframe.keyPoints[i]));
+		
 	}
 	//index in map
 	for(int i=0;i<keyframe.indexInMap.size();i++)
@@ -821,6 +832,7 @@ int CloudMap::StoreKeyFrames(fstream &file)
 int CloudMap::StoreMapPoint(fstream &file,CloudPoint &cp)
 {
 	StoreMapPointHeaderInfo(file,cp);
+	cout << "after header: " << file.tellg() << endl;
 
 	file.write((char*)(&cp.pt),sizeof(cp.pt));
 	file.write((char*)(&cp.reprojection_error),sizeof(cp.reprojection_error));
@@ -828,15 +840,18 @@ int CloudMap::StoreMapPoint(fstream &file,CloudPoint &cp)
 	//descriptor size
 	file.write((char*)(&cp.descriptor.rows), sizeof(cp.descriptor.rows));
 	file.write((char*)(&cp.descriptor.cols), sizeof(cp.descriptor.cols));
+	cout << "after size: " << file.tellg() << endl;
 
 
 	for(int i=0;i<cp.imgpt_for_img.size();i++)
 	{
 		file.write((char*)(&cp.imgpt_for_img[i]),sizeof(cp.imgpt_for_img[i]));
 	}
+	cout << "after index: " << file.tellg() << endl;
 
 	//descriptors
-	file.write((char*)(cp.descriptor.data), sizeof(cp.descriptor.total()*cp.descriptor.elemSize()));
+	file.write((char*)(cp.descriptor.data), cp.descriptor.total()*cp.descriptor.elemSize());
+	cout << "after des: " << file.tellg() << endl;
 
 
 	return 0;
@@ -845,7 +860,9 @@ int CloudMap::StoreMapPoints(fstream &file)
 {
 	for(int i=0;i<pcloud.size();i++)
 	{
+		cout << "position:  " << i << "  " << file.tellg() << "  " << file.tellp() << endl;
 		StoreMapPoint(file,pcloud[i]);
+		
 	}
 	return 0;
 }
@@ -904,7 +921,18 @@ int CloudMap::StoreMapPointHeaderInfo(fstream &file,CloudPoint &cp)
 
 bool CloudMap::LoadMap(string filename)
 {
-	fstream file;
+	FileStorage fs(filename, FileStorage::READ);
+	if (!fs.isOpened())
+	{
+		cout << "load open failed" << endl;
+	}
+	fs["mappoints"] >> pcloud;
+	fs["keyframes"] >> keyFrames;
+	fs.release();
+
+
+
+	/*fstream file;
 	file.open(filename.c_str(),ios::in|ios::binary);
 	MapHeader header;
 	bool flag=true;
@@ -931,7 +959,7 @@ bool CloudMap::LoadMap(string filename)
 		cout<<"load keyframes fail"<<endl;
 		return false;
 	}
-	cout<<"load keyframes success"<<endl;
+	cout<<"load keyframes success"<<endl;*/
 	return 0;
 }
 
@@ -984,9 +1012,12 @@ bool CloudMap::LoadMapPoint(fstream &file,CloudPoint &cp)
 	bool flag=true;
 	flag=LoadMapPointHeaderInfo(file,header);
 
+
+
 	
 	if(false==flag)
 	{
+		cout << "load map point header failed" << endl;
 		return false;
 	}
 	cp.imgpt_for_img.resize(header.indexInImageSize);
@@ -1002,7 +1033,7 @@ bool CloudMap::LoadMapPoint(fstream &file,CloudPoint &cp)
 	}
 	
 	//descriptors
-	file.read((char*)(cp.descriptor.data), sizeof(cp.descriptor.total()*cp.descriptor.elemSize()));
+	file.read((char*)(cp.descriptor.data), cp.descriptor.total()*cp.descriptor.elemSize());
 
 
 	return true;
@@ -1027,7 +1058,10 @@ bool CloudMap::LoadMapPoints(fstream &file,int mappointSize)
 bool CloudMap::LoadMapHeaderInfo(fstream &file,MapHeader &header)
 {
 	file.read((char*)(&header),sizeof(header));
-	return true;
+	if ('m' == header.sig[0] && 'h' == header.sig[1] && 'd' == header.sig[2]){
+		return true;
+	}
+	return false;
 }
 
 bool CloudMap::LoadKeyFrameHeaderInfo(fstream &file,KeyFrameHeader &keyframeHeader)
@@ -1053,6 +1087,7 @@ bool CloudMap::LoadMapPointHeaderInfo(fstream &file,CloudPointHeader &cpHeader)
 	}
 	else
 	{
+		cout << "map point header sig error: "<<cpHeader.sig[0] << cpHeader.sig[1] << cpHeader.sig[1] << endl;
 		return false;
 	}
 }
@@ -1333,7 +1368,7 @@ bool CloudMap::TriangulatePointsBetweenViews(
 	int query_view, 
 	int train_view,
 	vector<DMatch> &matches,
-	vector<struct CloudPoint>& new_triangulated,
+	vector<CloudPoint>& new_triangulated,
 	vector<int>& add_to_cloud,
 	float threshold
 	) 
@@ -1415,7 +1450,7 @@ bool CloudMap::TriangulatePointsBetweenViews(
 	cout << "add in triangulation function" << endl;
 	cout << matches.size() << "  " << pt_queryset.size() << "  " << pt_trainset.size() << endl;
 	GetAlignedPointsFromMatch(keyFrames[query_view].keyPoints, keyFrames[train_view].keyPoints, new_matches, pt_queryset, pt_trainset);
-	vector<struct CloudPoint> mynew_triangulated;
+	vector<CloudPoint> mynew_triangulated;
 	double myreproj_error = TriangulatePoints(pt_queryset, pt_trainset, K, Kinv, distortion_coeff, P_query, P_train, mynew_triangulated, correspImg1Pt);
 	cout << "my reproj error: " << myreproj_error << endl;
 
@@ -1525,7 +1560,7 @@ bool CloudMap::TriangulatePointsBetweenKeyFrames(
 	KeyFrame& query_view,
 	KeyFrame& train_view,
 	vector<DMatch> &matches,
-	vector<struct CloudPoint>& new_triangulated,
+	vector<CloudPoint>& new_triangulated,
 	vector<int>& add_to_cloud)
 {
 	return false;
@@ -1967,7 +2002,7 @@ bool CloudMap::FindPoseEstimation(
 
 
 void CloudMap::GetRGBForPointCloud(
-	const vector<struct CloudPoint>& _pcloud,
+	const vector<CloudPoint>& _pcloud,
 	vector<Vec3b>& RGBforCloud
 	) 
 {
@@ -2166,3 +2201,6 @@ void CloudMap::ExtractFeaturesFromMatches(KeyFrame& queryFrame, KeyFrame& trainF
 
 	matches.swap(selectedMatches);
 }
+
+
+

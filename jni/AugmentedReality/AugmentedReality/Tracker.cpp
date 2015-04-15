@@ -5,6 +5,8 @@
 Tracker::Tracker(void)
 {
 	isFirst=true;
+	startTracking = false;
+	isSetCamera = false;
 }
 
 
@@ -39,6 +41,22 @@ void Tracker::Load3DModel()
 
 int Tracker::TrackFrame(Mat& frame)
 {
-	int result = cloudmap.TrackFrame(frame);
-	return result;
+	if (isSetCamera == false)
+	{
+		cloudmap.SetCamera(frame.size());
+		isSetCamera = true;
+	}
+	if (startTracking)
+	{
+		int result = cloudmap.TrackFrame(frame);
+		return result;
+	}
+	return 0;
+}
+
+int Tracker::setTrackingFlag()
+{
+	startTracking = true;
+	cout << "start tracking is true now" << endl;
+	return 0;
 }

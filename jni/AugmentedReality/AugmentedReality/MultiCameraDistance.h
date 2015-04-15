@@ -57,7 +57,7 @@ public:
     }
 
 	void GetRGBForPointCloud(
-		const vector<struct CloudPoint>& pcloud,
+		const vector<CloudPoint>& pcloud,
 		vector<Vec3b>& RGBforCloud
 		);
 

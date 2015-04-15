@@ -113,7 +113,7 @@ void MultiCameraDistance::OnlyMatchFeatures(int strategy)
 }
 
 void MultiCameraDistance::GetRGBForPointCloud(
-	const vector<struct CloudPoint>& _pcloud,
+	const vector<CloudPoint>& _pcloud,
 	vector<Vec3b>& RGBforCloud
 	) 
 {

@@ -20,7 +20,6 @@ import org.opencv.core.Mat;
 import com.example.augmentedreality.ARActivity;
 import com.example.augmentedreality.MainActivity;
 import com.example.augmentedreality.R;
-import com.example.augmentedreality.osg.osgViewer;
 
 
 
@@ -246,6 +245,7 @@ public class PreProcessActivity extends ARActivity implements
 			break;
 		case R.id.pre_store:
 			storeMap();
+			showToast("map store");
 			break;
 			
 		}

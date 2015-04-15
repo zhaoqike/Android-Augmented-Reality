@@ -4,8 +4,9 @@ import com.example.augmentedreality.ar.ARNativeLib;
 import com.example.augmentedreality.ar.PreProcessActivity;
 import com.example.augmentedreality.ar.State;
 import com.example.augmentedreality.ar.SysApplication;
+import com.example.augmentedreality.ar.TrackingActivity;
+import com.example.augmentedreality.ar.TrackerActiviey;
 import com.example.augmentedreality.camera.CameraActivity;
-import com.example.augmentedreality.osg.osgViewer;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
@@ -21,6 +22,7 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.objdetect.CascadeClassifier;
+
 
 
 
@@ -192,7 +194,7 @@ public class MainActivity extends ARActivity  implements CvCameraViewListener2,S
 			break;
 		case R.id.is_track:
 			//setTrackMode();
-			Intent intentTra=new Intent(MainActivity.this,osgViewer.class);
+			Intent intentTra=new Intent(MainActivity.this,TrackingActivity.class);
 			startActivity(intentTra);
 			break;
 		case R.id.pre_opencam:

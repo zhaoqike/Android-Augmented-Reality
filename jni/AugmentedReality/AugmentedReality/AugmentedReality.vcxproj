@@ -88,6 +88,7 @@
     <ClInclude Include="AbstractFeatureMatcher.h" />
     <ClInclude Include="ARSystem.h" />
     <ClInclude Include="BundleAdjuster.h" />
+    <ClInclude Include="CloudPoint.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DebugPrint.h" />
     <ClInclude Include="Distance.h" />
@@ -99,9 +100,9 @@
     <ClInclude Include="KeyFrame.h" />
     <ClInclude Include="CloudMap.h" />
     <ClInclude Include="MapMaker.h" />
-    <ClInclude Include="MapPoint.h" />
     <ClInclude Include="MultiCameraDistance.h" />
     <ClInclude Include="MultiCameraPnP.h" />
+    <ClInclude Include="MyKeyPoint.h" />
     <ClInclude Include="OFFeatureMatcher.h" />
     <ClInclude Include="PreProcessor.h" />
     <ClInclude Include="Render.h" />
@@ -113,12 +114,14 @@
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Tracker.h" />
     <ClInclude Include="Triangulation.h" />
+    <ClInclude Include="YamlStorage.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AbstractFeatureMatcher.cpp" />
     <ClCompile Include="ARSystem.cpp" />
     <ClCompile Include="AugmentedReality.cpp" />
     <ClCompile Include="BundleAdjuster.cpp" />
+    <ClCompile Include="CloudPoint.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Distance.cpp" />
     <ClCompile Include="FeatureExtractor.cpp" />
@@ -127,9 +130,9 @@
     <ClCompile Include="KeyFrame.cpp" />
     <ClCompile Include="CloudMap.cpp" />
     <ClCompile Include="MapMaker.cpp" />
-    <ClCompile Include="MapPoint.cpp" />
     <ClCompile Include="MultiCameraDistance.cpp" />
     <ClCompile Include="MultiCameraPnP.cpp" />
+    <ClCompile Include="MyKeyPoint.cpp" />
     <ClCompile Include="OFFeatureMatcher.cpp" />
     <ClCompile Include="PreProcessor.cpp" />
     <ClCompile Include="Render.cpp" />
@@ -142,6 +145,7 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Tracker.cpp" />
     <ClCompile Include="Triangulation.cpp" />
+    <ClCompile Include="YamlStorage.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

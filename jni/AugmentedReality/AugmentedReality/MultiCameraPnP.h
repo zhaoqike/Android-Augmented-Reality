@@ -41,7 +41,7 @@ private:
 	bool TriangulatePointsBetweenViews(
 		int working_view, 
 		int second_view,
-		vector<struct CloudPoint>& new_triangulated,
+		vector<CloudPoint>& new_triangulated,
 		vector<int>& add_to_cloud, 
 		float threshold
 		);

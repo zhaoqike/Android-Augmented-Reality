@@ -1,6 +1,6 @@
 #pragma once
 #include "stdafx.h"
-#include "MapPoint.h"
+//#include "MapPoint.h"
 #include "KeyFrame.h"
 #include "Render.h"
 
@@ -49,7 +49,7 @@ public:
 
 
 
-	vector<MapPoint> mapPoints;
+	//vector<CloudPoint> mapPoints;
 	vector<KeyFrame> keyFrames;
 	//MultiCameraPnP distance;
 
@@ -135,7 +135,7 @@ public:
 		int query_view,
 		int train_view,
 		vector<DMatch> &matches,
-		vector<struct CloudPoint>& new_triangulated,
+		vector<CloudPoint>& new_triangulated,
 		vector<int>& add_to_cloud,
 		float threshold);
 
@@ -143,7 +143,7 @@ public:
 		KeyFrame& query_view,
 		KeyFrame& train_view,
 		vector<DMatch> &matches,
-		vector<struct CloudPoint>& new_triangulated,
+		vector<CloudPoint>& new_triangulated,
 		vector<int>& add_to_cloud);
 
 	void AdjustCurrentBundle(int queryIdx,int trainIdx,vector<DMatch> &matches);
@@ -179,11 +179,36 @@ public:
 		); 
 
 	void GetRGBForPointCloud(
-		const vector<struct CloudPoint>& _pcloud,
+		const vector<CloudPoint>& _pcloud,
 		vector<Vec3b>& RGBforCloud);
 
 	vector<Vec3b>& getPointCloudRGB();
 
 	void ExtractFeaturesFromMatches(KeyFrame& queryFrame, KeyFrame& trainFrame, vector<DMatch>& matches);
+
+
+
+
+	/////store
+	//void write(FileStorage& fs, const string&, const KeyFrame& keyframe);
+	//void read(const FileNode& node, KeyFrame& keyframe, const KeyFrame& default_value = KeyFrame());
+
+	//void write(FileStorage& fs, const string&, const CloudPoint& cp);
+	//void read(const FileNode& node, CloudPoint& cp, const CloudPoint& default_value = CloudPoint());
+
+	//void write(FileStorage& fs, const string&, const MyKeyPoint& m);
+	//void read(const FileNode& node, MyKeyPoint& m, const MyKeyPoint& default_value = MyKeyPoint());
+
+
+	//void write(FileStorage& fs, const string&, const vector<MyKeyPoint>& m);
+	//void read(const FileNode& node, vector<MyKeyPoint>& m, const vector<MyKeyPoint>& default_value = vector<MyKeyPoint>());
+
+
+	//void write(FileStorage& fs, const string&, const vector<KeyFrame>& m);
+	//void read(const FileNode& node, vector<KeyFrame>& m, const vector<KeyFrame>& default_value = vector<KeyFrame>());
+
+	//void write(FileStorage& fs, const string&, const vector<CloudPoint>& m);
+	//void read(const FileNode& node, vector<CloudPoint>& m, const vector<CloudPoint>& default_value = vector<CloudPoint>());
+
 };
 

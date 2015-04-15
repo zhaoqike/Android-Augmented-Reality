@@ -36,5 +36,13 @@ public:
 	~KeyFrame(void);
 
 	int countIndex();
+
+	void write(FileStorage& fs) const;
+
+	void read(const FileNode& node);
+
+
+	//void KeyPointsToMyKeyPoints(vector<KeyPoint>& keypoints, vector<MyKeyPoint>& mykeypoints);
+	//void MykeyPointsToKeyPoints(vector<MyKeyPoint>& mykeypoints, vector<KeyPoint>& keypoints);
 };
 

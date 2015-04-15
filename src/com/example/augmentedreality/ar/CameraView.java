@@ -24,6 +24,12 @@ public class CameraView extends JavaCameraView {
 	}
 
 
+	public CameraView(TrackingActivity context, int i) {
+		super(context, i);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public List<Size> getResolutionList() {
         return mCamera.getParameters().getSupportedPreviewSizes();
     }

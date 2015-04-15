@@ -48,7 +48,7 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setStart
 //tracking
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setStartTrackFlagNative(JNIEnv*, jobject);
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_loadMapNative(JNIEnv*, jobject);
-JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba);
+JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba);
 
 
 //getpose
@@ -118,7 +118,7 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setSecon
 }
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_storeMapNative(JNIEnv*, jobject)
 {
-	preprocessor.map.StoreMap("/sdcard/map");
+	preprocessor.map.StoreMap("/sdcard/map.yml");
 	preprocessor.map.writeError();
 }
 
@@ -130,13 +130,21 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setStart
 //tracker
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setStartTrackFlagNative(JNIEnv*, jobject)
 {
-
+	tracker.setTrackingFlag();
 }
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_loadMapNative(JNIEnv*, jobject)
 {
-
+	redirectStdOut();
+	tracker.cloudmap.LoadMap("/sdcard/map.yml");
+	tracker.cloudmap.StoreMap("/sdcard/map1.yml");
+	cout<<"tracker"<<endl;
+	cout<<tracker.cloudmap.keyFrames.size()<<endl;
+	cout<<tracker.cloudmap.pcloud.size()<<endl;
+	center=tracker.cloudmap.ComputeCenter();
+	cout<<"now we have center"<<endl;
+	cout<<center.x<<"  "<<center.y<<"  "<<center.z<<endl;
 }
-JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba)
+JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba)
 {
 	Mat& mGr  = *(Mat*)addrGray;
 	Mat& mRgb = *(Mat*)addrRgba;
@@ -148,8 +156,9 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_tracking
 	else if(state==trackSuccess)
 	{
 		trackState=true;
-		preprocessor.map.fillPoseVal(val);
+		tracker.cloudmap.fillPoseVal(val);
 	}
+	return state;
 }
 
 

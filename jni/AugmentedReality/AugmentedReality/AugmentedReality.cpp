@@ -96,8 +96,92 @@ bool Compare(CloudMap m1,CloudMap m2)
 	return true;
 }
 		
+bool LoadMapPointHeaderInfo(fstream &file, CloudPointHeader &cpHeader)
+{
+	file.read((char*)(&cpHeader), sizeof(cpHeader));
+	//cout<<"&&"<<cpHeader.sig[0]<<"&&"<<cpHeader.sig[1]<<"&&"<<cpHeader.sig[2]<<"&&"<<endl;
+	if ('m' == cpHeader.sig[0] && 'p' == cpHeader.sig[1] && 't' == cpHeader.sig[2])
+	{
+		cout << "map point header sig correct" << endl;
+		return true;
+	}
+	else
+	{
+		cout << "map point header sig error: " << cpHeader.sig[0] << cpHeader.sig[1] << cpHeader.sig[1] << endl;
+		return false;
+	}
+}
+
+bool LoadMapPoint(fstream &file, CloudPoint &cp)
+{
+	CloudPointHeader header;
+	bool flag = true;
+	flag = LoadMapPointHeaderInfo(file, header);
+
+
+
+
+	if (false == flag)
+	{
+		cout << "load map point header failed" << endl;
+		return false;
+	}
+	cp.imgpt_for_img.resize(header.indexInImageSize);
+	cp.descriptor.create(header.descriptorHeader.rows, header.descriptorHeader.cols, header.descriptorHeader.type);
+	file.read((char*)(&cp.pt), sizeof(cp.pt));
+	file.read((char*)(&cp.reprojection_error), sizeof(cp.reprojection_error));
+
+
+
+	for (int i = 0; i<cp.imgpt_for_img.size(); i++)
+	{
+		file.read((char*)(&cp.imgpt_for_img[i]), sizeof(cp.imgpt_for_img[i]));
+	}
+
+	//descriptors
+	file.read((char*)(cp.descriptor.data), sizeof(cp.descriptor.total()*cp.descriptor.elemSize()));
+
+
+	return true;
+}
+
+bool LoadMapPoints(fstream &file, int mappointSize)
+{
+	vector<CloudPoint> pcloud;
+	pcloud.resize(mappointSize);
+	bool flag = true;
+	for (int i = 0; i<mappointSize; i++)
+	{
+		cout << file.tellg() << "  " << file.tellp() << endl;
+		flag = LoadMapPoint(file, pcloud[i]);
+		if (false == flag)
+		{
+			cout << "mappoint " << i << " failed" << endl;
+			return false;
+		}
+	}
+	return true;
+}
 
 int main() {
+	CloudMap m;
+	//m.LoadMap("map");
+	fstream file("E:/android_libs/map", ios::in|ios::binary);
+	MapHeader mh;
+	file.read((char*)&mh, sizeof(mh));
+	cout << mh.sig[0] << mh.sig[1] << mh.sig[2] << endl;
+
+	cout << file.cur << endl;
+	cout << ios::cur << endl;
+	//file.
+
+	CloudPoint cp;
+	LoadMapPoints(file, mh.mappointSize);
+	//file.read((char*)&cph, sizeof(cph));
+	//cout << cph.sig[0] << cph.sig[1] << cph.sig[2] << endl;
+	cout << file.cur << endl;
+
+	file.close();
 	
 	////freopen("out.txt","w",stderr);
 	//cout<<"hello world"<<endl;
@@ -119,7 +203,7 @@ int main() {
 	//preprocessor.Test("purse_l");
 	/*preprocessor.Test("urd");
 	preprocessor.Test("book_h");*/
-	preprocessor.Test("919");
+	//preprocessor.Test("919");
 	//preprocessor.Test("testimages");
 	//preprocessor.Test("a");
 	//tracker.Load3DModel();
