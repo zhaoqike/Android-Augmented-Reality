@@ -155,12 +155,19 @@ int CloudMap::TrackFrame(Mat& image)
 	{
 		cout << "success using third branch" << endl;
 		cerr << "success using third branch" << endl;
+		return state;
 	}
 	else
 	{
 		cout << "failed estimated" << endl;
 		cerr << "failed estimated" << endl;
 	}
+	state = SecondBranch(nowframe, image);
+	if (state >= trackSuccess)
+	{
+		return state;
+	}
+	state = FirstBranch(nowframe, image);
 	return state;
 	/*int trainIdx=keyFrames.size()-1;
 	double minDistance=DBL_MAX;
@@ -1662,11 +1669,11 @@ void CloudMap::Find2D3DCorrespondencesWithTriangulation(KeyFrame& nowframe,
 	cout << "after cloudpoints to points" << pcloud.size() << "  " << allPoints.size() << endl;
 	vector<Point2f> projected3D;
 	projectPoints(allPoints, estimatedRvec, estimatedT, K, distortion_coeff, projected3D);
-	cout << "after projecting points" << endl;
-	for (int i = 0; i < pcloud.size(); i++)
-	{
-		cout << pcloud[i].pt.x << "  " << pcloud[i].pt.y << "  " << pcloud[i].pt.z << "  " << allPoints[i].x << "  " << allPoints[i].y <<"  "<<allPoints[i].z<< "  " << projected3D[i].x << "  " << projected3D[i].y << endl;
-	}
+	//cout << "after projecting points" << endl;
+	//for (int i = 0; i < pcloud.size(); i++)
+	//{
+	//	cout << pcloud[i].pt.x << "  " << pcloud[i].pt.y << "  " << pcloud[i].pt.z << "  " << allPoints[i].x << "  " << allPoints[i].y <<"  "<<allPoints[i].z<< "  " << projected3D[i].x << "  " << projected3D[i].y << endl;
+	//}
 	vector<int> projected3DInImage;
 
 	cout << "begin selecting points..." << endl;
@@ -1698,7 +1705,7 @@ void CloudMap::Find2D3DCorrespondencesWithTriangulation(KeyFrame& nowframe,
 	//FeatureMatcher matcher;
 	//matcher.Match(nowframe, keyframetrain, matches);
 	cout << "-----------------------------------------------------------------" << endl;
-	cout << "find 2d 3d correspondences with nothing" << endl;
+	cout << "find 2d 3d correspondences with triangulation" << endl;
 	cout << "query frame keypoints: " << nowframe.keyPoints.size() << endl;
 	//cout << "train frame keypoints: " << keyframetrain.keyPoints.size() << endl;
 	cout << "match size: " << matches.size() << endl;

@@ -117,13 +117,19 @@ int FeatureMatcher::MaskMatch(Mat& queryDescriptors, Mat& trainDescriptors, vect
 	//cout << queryframe.descriptors.size() << "  " << trainframe.descriptors.size() << matches.size() << endl;
 	cout << "begin maskmatch" << endl;
 	cout << matches.size() << endl;
+	cout << queryDescriptors.size() << endl;
+	cout << trainDescriptors.size() << endl;
+	if (queryDescriptors.size().height == 0 || queryDescriptors.size().width == 0 || trainDescriptors.size().width==0||trainDescriptors.size().height==0)
+	{
+		return 0;
+	}
 	matcher.match(queryDescriptors, trainDescriptors, matches);
 	cout << matches.size() << endl;
 	//cout << queryframe.descriptors.size() << "  " << trainframe.descriptors.size() << matches.size() << endl;
 	//cout << "end match" << endl;
 
 
-	assert(matches.size() > 0);
+	//assert(matches.size() > 0);
 
 	
 

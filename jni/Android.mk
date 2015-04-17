@@ -31,7 +31,12 @@ $(LOCAL_AR_DIR)/stdafx.cpp \
 $(LOCAL_AR_DIR)/Timer.cpp \
 $(LOCAL_AR_DIR)/Tracker.cpp \
 $(LOCAL_AR_DIR)/Triangulation.cpp \
-$(LOCAL_AR_DIR)/YamlStorage.cpp 
+$(LOCAL_AR_DIR)/YamlStorage.cpp \
+$(LOCAL_AR_DIR)/FBTime.cpp \
+$(LOCAL_AR_DIR)/SBTime.cpp \
+$(LOCAL_AR_DIR)/TBTime.cpp \
+$(LOCAL_AR_DIR)/KLTTime.cpp 
+
 
 
 

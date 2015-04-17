@@ -22,9 +22,9 @@ extern bool isPrint;
 
 
 
-const int defaultNum = 50000;
-const int defaultInitNum = 50000;
-const int defaultTrackNum = 50000;
+const int defaultNum = 500;
+const int defaultInitNum = 500;
+const int defaultTrackNum = 500;
 const int descriptorLen = 32;
 
 const float initTriangulationThreshold = 0.75;

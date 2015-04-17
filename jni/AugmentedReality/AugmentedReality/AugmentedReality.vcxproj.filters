@@ -108,6 +108,18 @@
     <ClInclude Include="YamlStorage.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="FBTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SBTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TBTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KLTTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -186,6 +198,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="YamlStorage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FBTime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SBTime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TBTime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KLTTime.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

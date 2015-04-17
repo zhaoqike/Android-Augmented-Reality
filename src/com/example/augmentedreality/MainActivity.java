@@ -5,7 +5,7 @@ import com.example.augmentedreality.ar.PreProcessActivity;
 import com.example.augmentedreality.ar.State;
 import com.example.augmentedreality.ar.SysApplication;
 import com.example.augmentedreality.ar.TrackingActivity;
-import com.example.augmentedreality.ar.TrackerActiviey;
+//import com.example.augmentedreality.ar.TrackerActiviey;
 import com.example.augmentedreality.camera.CameraActivity;
 
 import org.opencv.android.BaseLoaderCallback;
