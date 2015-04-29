@@ -33,4 +33,6 @@ public class ARNativeLib {
 
 	public static native boolean getGLPoseNative(float[] val);
 	public static native boolean getCenterNative(float[] c);
+
+	public static native void writeInfo();
 }

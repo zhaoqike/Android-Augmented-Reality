@@ -49,7 +49,7 @@ public class TrackingActivity extends ARActivity implements CvCameraViewListener
 			{
 				Log.i(TAG, "OpenCV loaded successfully");
                 System.loadLibrary("AugmentedReality");
-                mCameraView.enableFpsMeter();
+                //mCameraView.enableFpsMeter();
                 mCameraView.enableView();
 				//mOpenCvCameraView.setOnTouchListener( MainActivity.this );
 			} break;
@@ -166,6 +166,8 @@ public class TrackingActivity extends ARActivity implements CvCameraViewListener
 		case R.id.trk_start:
 			ARNativeLib.setStartTrackFlagNative();
 			break;
+		case R.id.write_info:
+			ARNativeLib.writeInfo();
 		}
 
 		return super.onOptionsItemSelected(item);

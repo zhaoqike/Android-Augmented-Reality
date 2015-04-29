@@ -49,6 +49,7 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setStart
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_setStartTrackFlagNative(JNIEnv*, jobject);
 JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_loadMapNative(JNIEnv*, jobject);
 JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba);
+JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_writeInfo(JNIEnv*, jobject);
 
 
 //getpose
@@ -146,6 +147,10 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_loadMapN
 }
 JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba)
 {
+	double nowglbtime=gtimer.getElapsedTimeInMilliSec();
+	double glbduration=nowglbtime-lastglbtime;
+	lastglbtime=nowglbtime;
+	frames.push_back(1000.0/glbduration);
 	Mat& mGr  = *(Mat*)addrGray;
 	Mat& mRgb = *(Mat*)addrRgba;
 	int state=tracker.TrackFrame(mRgb);
@@ -159,6 +164,25 @@ JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_tracking
 		tracker.cloudmap.fillPoseVal(val);
 	}
 	return state;
+}
+
+void printFrames()
+{
+	ofstream framefile;
+	framefile.open("sdcard/frames3d.txt");
+	framefile<<frames.size()<<endl;
+	for(int i=0;i<frames.size();i++)
+	{
+		framefile<<frames[i]<<endl;
+	}
+	framefile.flush();
+	framefile.close();
+}
+
+JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_writeInfo(JNIEnv*, jobject)
+{
+	printFrames();
+	tracker.cloudmap.writeError();
 }
 
 

@@ -2144,7 +2144,7 @@ void CloudMap::fillPoseVal(float val[])
 
 void CloudMap::writeError()
 {
-	path = "/sdcard/err.txt";
+	path = "/sdcard/err3d.txt";
 	fstream file;
 	file.open(path, ios::out);
 	double mean = 0.0;

@@ -20,6 +20,7 @@
     <string name="trk_open_camera">open camera</string>
     <string name="trk_lod_map">lod_map</string>
     <string name="trk_start_tracking">start_tracking</string>
+    <string name="trk_write_info">write_info</string>
     
     
     <string name="exit">exit</string>

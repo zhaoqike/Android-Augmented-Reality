@@ -72,7 +72,7 @@ public class PreProcessActivity extends ARActivity implements
                 {
                     Log.i(TAG, "OpenCV loaded successfully");
                     System.loadLibrary("AugmentedReality");
-                    mCameraView.enableFpsMeter();
+                    //mCameraView.enableFpsMeter();
                     mCameraView.enableView();
                     //mOpenCvCameraView.setOnTouchListener( MainActivity.this );
                 } break;

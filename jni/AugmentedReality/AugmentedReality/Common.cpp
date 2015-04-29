@@ -21,6 +21,17 @@ bool isPrint = true;
 
 
 
+//global timer to compute frame rate
+Timer gtimer;
+
+//global last frame time
+double lastglbtime = 0;
+
+//store frame rate
+vector<double> frames;
+
+
+
 bool CompareDI(DI a, DI b)
 {
 	return a.distance < b.distance;

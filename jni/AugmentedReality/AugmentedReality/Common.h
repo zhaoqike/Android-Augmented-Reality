@@ -20,6 +20,15 @@ using namespace cv;
 
 extern bool isPrint;
 
+//global timer to compute frame rate
+extern Timer gtimer;
+
+//global last frame time
+extern double lastglbtime;
+
+//store frame rate
+extern vector<double> frames;
+
 
 
 const int defaultNum = 500;
