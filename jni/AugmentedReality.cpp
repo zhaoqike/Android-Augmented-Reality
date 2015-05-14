@@ -95,6 +95,9 @@ JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_preproce
 		center=preprocessor.map.ComputeCenter();
 		cout<<"now we have center"<<endl;
 		cout<<center.x<<"  "<<center.y<<"  "<<center.z<<endl;
+		Model model("/sdcard/ar/bj1/models/cow.ply");
+		model.p3d = center;
+		preprocessor.map.model=model;
 	}
 	else if(state==triangulateSuccess)
 	{
@@ -144,6 +147,9 @@ JNIEXPORT void JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_loadMapN
 	center=tracker.cloudmap.ComputeCenter();
 	cout<<"now we have center"<<endl;
 	cout<<center.x<<"  "<<center.y<<"  "<<center.z<<endl;
+	Model model("/sdcard/ar/bj1/models/cow.ply");
+	model.p3d = center;
+	tracker.cloudmap.model=model;
 }
 JNIEXPORT jint JNICALL Java_com_example_augmentedreality_ar_ARNativeLib_trackingFrameNative(JNIEnv*, jobject, jlong addrGray, jlong addrRgba)
 {

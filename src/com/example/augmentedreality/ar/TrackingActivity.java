@@ -110,7 +110,7 @@ public class TrackingActivity extends ARActivity implements CvCameraViewListener
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT));
         
-        mARRenderer = new ARCubeRenderer();
+        mARRenderer = new ARCubeRenderer(this);
 
         glSurfaceView.setRenderer(mARRenderer);
         
@@ -166,8 +166,8 @@ public class TrackingActivity extends ARActivity implements CvCameraViewListener
 		case R.id.trk_start:
 			ARNativeLib.setStartTrackFlagNative();
 			break;
-		case R.id.write_info:
-			ARNativeLib.writeInfo();
+		/*case R.id.write_info:
+			ARNativeLib.writeInfo();*/
 		}
 
 		return super.onOptionsItemSelected(item);

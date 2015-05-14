@@ -133,7 +133,7 @@ public class PreProcessActivity extends ARActivity implements
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT));
         
-        mARRenderer = new ARCubeRenderer();
+        mARRenderer = new ARCubeRenderer(this);
 
         glSurfaceView.setRenderer(mARRenderer);
         

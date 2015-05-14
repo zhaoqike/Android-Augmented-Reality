@@ -8,6 +8,11 @@ include ../OpenCV-2.4.9-android-sdk/sdk/native/jni/OpenCV.mk
 
 LOCAL_AR_DIR := AugmentedReality/AugmentedReality
 LOCAL_SRC_FILES := AugmentedReality.cpp \
+Model/mesh.cpp \
+Model/pmesh.cpp \
+Model/triangle.cpp \
+Model/vec3.cpp \
+Model/vertex.cpp \
 $(LOCAL_AR_DIR)/AbstractFeatureMatcher.cpp \
 $(LOCAL_AR_DIR)/ARSystem.cpp \
 $(LOCAL_AR_DIR)/CloudPoint.cpp \

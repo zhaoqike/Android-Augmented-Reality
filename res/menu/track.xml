@@ -5,6 +5,6 @@
     <item android:id="@+id/trk_opencam" android:title="@string/trk_open_camera"/>
     <item android:id="@+id/trk_lod" android:title="@string/trk_lod_map"/>
     <item android:id="@+id/trk_start" android:title="@string/trk_start_tracking"/>
-    <item android:id="@+id/write_info" android:title="@string/trk_write_info"/>
+    <!-- <item android:id="@+id/write_info" android:title="@string/trk_write_info"/>   -->
 
 </menu>

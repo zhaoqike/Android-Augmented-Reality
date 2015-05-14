@@ -16,6 +16,7 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfDouble;
 
+import com.example.augmentedreality.R;
 import com.example.augmentedreality.opengl.CameraCalibration;
 import com.example.augmentedreality.opengl.ReadText;
 import com.example.augmentedreality.opengl.geometry.GLTransformation;
@@ -26,6 +27,7 @@ import com.example.augmentedreality.opengl.geometry.Vector3;
 import android.R.string;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.opengl.GLUtils;
 import android.opengl.GLSurfaceView.Renderer;
 import android.util.Log;
@@ -35,13 +37,13 @@ public class ARCubeRenderer implements Renderer{
 	boolean m_isTextureInitialized=false;
 	int[] m_backgroundTextureId=new int[1];
 	int backgroundTexture;
-	
+
 	int screenWidth=640;
 	int screenHeight=480;
-	
+
 	static float PI=3.141592653f;
-	
-	
+
+
 	//int cameraWidth=0;
 	//int cameraHeight=0;
 
@@ -91,8 +93,9 @@ public class ARCubeRenderer implements Renderer{
 	// 定义本程序所使用的纹理
 	private int texture;
 
-	public ARCubeRenderer()
+	public ARCubeRenderer(Context main)
 	{
+		this.context = main;
 		// 将立方体的顶点位置数据数组包装成FloatBuffer;
 		cubeVerticesBuffer = floatBufferUtil(cubeVertices);
 		// 将立方体的6个面（12个三角形）的数组包装成ByteBuffer
@@ -119,10 +122,10 @@ public class ARCubeRenderer implements Renderer{
 		// 启用2D纹理贴图
 		gl.glEnable(GL10.GL_TEXTURE_2D);
 		// 装载纹理
-		//loadTexture(gl);
+		loadTexture(gl);
 	}
-	
-	
+
+
 	static void _gluPerspective(GL10 gl, float fovy, float aspect, float zNear, float zFar)
 	{
 		float top = zNear * ((float) Math.tan(fovy * PI / 360.0));
@@ -188,8 +191,8 @@ public class ARCubeRenderer implements Renderer{
 		/*int viewWidth=width;
 		int viewHeight=height;
 		float viewRatio=(float)viewWidth/(float)viewHeight;
-		
-		
+
+
 		if(cameraWidth==0 && cameraHeight==0)
 		{
 			cameraWidth=width;
@@ -197,7 +200,7 @@ public class ARCubeRenderer implements Renderer{
 		}
 		float w=cameraWidth;
 		float h=cameraHeight;
-		
+
 		float cameraRatio=w/h;
 		if(viewRatio>cameraRatio)
 		{
@@ -226,7 +229,7 @@ public class ARCubeRenderer implements Renderer{
 		//h=viewHeight;
 		float w=width;
 		float h=height;
-		
+
 		float znear = 1.0f;
 		float zfar = 100.0f;
 		float u0 = w / 2;
@@ -491,7 +494,7 @@ public class ARCubeRenderer implements Renderer{
 		gl.glColorPointer(4, GL10.GL_FIXED, 0, lxcolorBuffer);
 		gl.glDrawArrays(GL10.GL_LINES,0,2);
 		//gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
-		
+
 
 
 		//gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
@@ -528,6 +531,7 @@ public class ARCubeRenderer implements Renderer{
 
 	public void drawCubeModel(GL10 gl)
 	{
+		float s = 0.4f;
 		float LightAmbient[] = { 0.25f, 0.25f, 0.25f, 1.0f };    // Ambient Light Values
 		float LightDiffuse[] = { 0.1f, 0.1f, 0.1f, 1.0f };    // Diffuse Light Values
 		float LightPosition[] = { 0.0f, 0.0f, 2.0f, 1.0f };    // Light Position
@@ -538,7 +542,7 @@ public class ARCubeRenderer implements Renderer{
 
 		//glPushAttrib(GL_COLOR_BUFFER_BIT | GL_CURRENT_BIT | GL_ENABLE_BIT | GL_LIGHTING_BIT | GL_POLYGON_BIT);
 
-		gl.glColor4f(0.2f, 0.35f, 0.3f, 0.75f);         // Full Brightness, 50% Alpha ( NEW )
+		gl.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);         // Full Brightness, 50% Alpha ( NEW )
 		gl.glBlendFunc(GL10.GL_ONE, GL10.GL_ONE_MINUS_SRC_ALPHA);       // Blending Function For Translucency Based On Source Alpha 
 		gl.glEnable(GL10.GL_BLEND);
 
@@ -566,10 +570,10 @@ public class ARCubeRenderer implements Renderer{
 
 		//gles
 		float q3front[] = {
-				-1.0f, -1.0f, 1.0f,
-				1.0f, -1.0f, 1.0f,
-				1.0f, 1.0f, 1.0f,
-				-1.0f, 1.0f, 1.0f
+				-s, -s, s,
+				s, -s, s,
+				s, s, s,
+				-s, s, s
 		};
 
 		FloatBuffer frontBuffer=floatBufferUtil(q3front);
@@ -580,18 +584,18 @@ public class ARCubeRenderer implements Renderer{
 		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
 
 		// Back Face
-		/*glNormal3f(0.0f, 0.0f, -1.0f);    // Normal Pointing Away From Viewer
-		glVertex3f(-1.0f, -1.0f, -1.0f);  // Point 1 (Back)
-		glVertex3f(-1.0f, 1.0f, -1.0f);  // Point 2 (Back)
-		glVertex3f(1.0f, 1.0f, -1.0f);  // Point 3 (Back)
-		glVertex3f(1.0f, -1.0f, -1.0f);  // Point 4 (Back)*/
+		/*glNormal3f(0.0f, 0.0f, -s);    // Normal Pointing Away From Viewer
+		glVertex3f(-s, -s, -s);  // Point 1 (Back)
+		glVertex3f(-s, s, -s);  // Point 2 (Back)
+		glVertex3f(s, s, -s);  // Point 3 (Back)
+		glVertex3f(s, -s, -s);  // Point 4 (Back)*/
 
 		//gles
 		float q3back[] = {
-				-1.0f, -1.0f, -1.0f,
-				-1.0f, 1.0f, -1.0f,
-				1.0f, 1.0f, -1.0f,
-				1.0f, -1.0f, -1.0f
+				-s, -s, -s,
+				-s, s, -s,
+				s, s, -s,
+				s, -s, -s
 		};
 
 		FloatBuffer backBuffer=floatBufferUtil(q3back);
@@ -603,18 +607,18 @@ public class ARCubeRenderer implements Renderer{
 
 
 		// Top Face
-		/*glNormal3f(0.0f, 1.0f, 0.0f);    // Normal Pointing Up
-		glVertex3f(-1.0f, 1.0f, -1.0f);  // Point 1 (Top)
-		glVertex3f(-1.0f, 1.0f, 1.0f);  // Point 2 (Top)
-		glVertex3f(1.0f, 1.0f, 1.0f);  // Point 3 (Top)
-		glVertex3f(1.0f, 1.0f, -1.0f);  // Point 4 (Top)*/
+		/*glNormal3f(0.0f, s, 0.0f);    // Normal Pointing Up
+		glVertex3f(-s, s, -s);  // Point 1 (Top)
+		glVertex3f(-s, s, s);  // Point 2 (Top)
+		glVertex3f(s, s, s);  // Point 3 (Top)
+		glVertex3f(s, s, -s);  // Point 4 (Top)*/
 
 		//gles
 		float q3top[] = {
-				-1.0f, 1.0f, -1.0f,
-				-1.0f, 1.0f, 1.0f,
-				1.0f, 1.0f, 1.0f,
-				1.0f, 1.0f, -1.0f
+				-s, s, -s,
+				-s, s, s,
+				s, s, s,
+				s, s, -s
 		};
 
 		FloatBuffer topBuffer=floatBufferUtil(q3top);
@@ -627,18 +631,18 @@ public class ARCubeRenderer implements Renderer{
 
 
 		// Bottom Face
-		/*glNormal3f(0.0f, -1.0f, 0.0f);    // Normal Pointing Down
-		glVertex3f(-1.0f, -1.0f, -1.0f);  // Point 1 (Bottom)
-		glVertex3f(1.0f, -1.0f, -1.0f);  // Point 2 (Bottom)
-		glVertex3f(1.0f, -1.0f, 1.0f);  // Point 3 (Bottom)
-		glVertex3f(-1.0f, -1.0f, 1.0f);  // Point 4 (Bottom)*/
+		/*glNormal3f(0.0f, -s, 0.0f);    // Normal Pointing Down
+		glVertex3f(-s, -s, -s);  // Point 1 (Bottom)
+		glVertex3f(s, -s, -s);  // Point 2 (Bottom)
+		glVertex3f(s, -s, s);  // Point 3 (Bottom)
+		glVertex3f(-s, -s, s);  // Point 4 (Bottom)*/
 
 		//gles
 		float q3bottom[] = {
-				-1.0f, -1.0f, -1.0f,
-				1.0f, -1.0f, -1.0f,
-				1.0f, -1.0f, 1.0f,
-				-1.0f, -1.0f, 1.0f
+				-s, -s, -s,
+				s, -s, -s,
+				s, -s, s,
+				-s, -s, s
 		};
 
 		FloatBuffer bottomBuffer=floatBufferUtil(q3bottom);
@@ -650,18 +654,18 @@ public class ARCubeRenderer implements Renderer{
 
 
 		// Right face
-		/*glNormal3f(1.0f, 0.0f, 0.0f);    // Normal Pointing Right
-		glVertex3f(1.0f, -1.0f, -1.0f);  // Point 1 (Right)
-		glVertex3f(1.0f, 1.0f, -1.0f);  // Point 2 (Right)
-		glVertex3f(1.0f, 1.0f, 1.0f);  // Point 3 (Right)
-		glVertex3f(1.0f, -1.0f, 1.0f);  // Point 4 (Right)*/
+		/*glNormal3f(s, 0.0f, 0.0f);    // Normal Pointing Right
+		glVertex3f(s, -s, -s);  // Point 1 (Right)
+		glVertex3f(s, s, -s);  // Point 2 (Right)
+		glVertex3f(s, s, s);  // Point 3 (Right)
+		glVertex3f(s, -s, s);  // Point 4 (Right)*/
 
 		//gles
 		float q3right[] = {
-				1.0f, -1.0f, -1.0f,
-				1.0f, 1.0f, -1.0f,
-				1.0f, 1.0f, 1.0f,
-				1.0f, -1.0f, 1.0f
+				s, -s, -s,
+				s, s, -s,
+				s, s, s,
+				s, -s, s
 		};
 
 		FloatBuffer rightBuffer=floatBufferUtil(q3right);
@@ -673,22 +677,23 @@ public class ARCubeRenderer implements Renderer{
 
 
 		// Left Face
-		/*glNormal3f(-1.0f, 0.0f, 0.0f);    // Normal Pointing Left
-		glVertex3f(-1.0f, -1.0f, -1.0f);  // Point 1 (Left)
-		glVertex3f(-1.0f, -1.0f, 1.0f);  // Point 2 (Left)
-		glVertex3f(-1.0f, 1.0f, 1.0f);  // Point 3 (Left)
-		glVertex3f(-1.0f, 1.0f, -1.0f);  // Point 4 (Left)*/
+		/*glNormal3f(-s, 0.0f, 0.0f);    // Normal Pointing Left
+		glVertex3f(-s, -s, -s);  // Point 1 (Left)
+		glVertex3f(-s, -s, s);  // Point 2 (Left)
+		glVertex3f(-s, s, s);  // Point 3 (Left)
+		glVertex3f(-s, s, -s);  // Point 4 (Left)*/
 
 
 		//gles
 		float q3left[] = {
-				-1.0f, -1.0f, -1.0f,
-				-1.0f, -1.0f, 1.0f,
-				-1.0f, 1.0f, 1.0f,
-				-1.0f, 1.0f, -1.0f
+				-s, -s, -s,
+				-s, -s, s,
+				-s, s, s,
+				-s, s, -s
 		};
 
 		FloatBuffer leftBuffer=floatBufferUtil(q3left);
+
 
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, leftBuffer);
@@ -742,6 +747,39 @@ public class ARCubeRenderer implements Renderer{
 		glPopAttrib();*/
 	}
 
+	public void drawCubeModel2(GL10 gl)
+	{
+		// 清除屏幕缓存和深度缓存
+		//gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+		// 启用顶点座标数据
+		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+		// 启用贴图座标数组数据
+		gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);  //①
+		// 设置当前矩阵模式为模型视图。
+		//gl.glMatrixMode(GL10.GL_MODELVIEW);
+		//gl.glLoadIdentity();
+		// 把绘图中心移入屏幕2个单位
+		//gl.glTranslatef(0f, 0.0f, -2.0f);
+		// 旋转图形
+		//gl.glRotatef(angley, 0, 1, 0);
+		//gl.glRotatef(anglex, 1, 0, 0);
+		// 设置顶点的位置数据
+		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, cubeVerticesBuffer);
+		// 设置贴图的座标数据
+		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, cubeTexturesBuffer);//②
+		// 执行纹理贴图
+		gl.glBindTexture(GL10.GL_TEXTURE_2D, texture);  //③
+		// 按cubeFacetsBuffer指定的面绘制三角形
+		gl.glDrawElements(GL10.GL_TRIANGLES, cubeFacetsBuffer.remaining(),
+				GL10.GL_UNSIGNED_BYTE, cubeFacetsBuffer);
+		// 绘制结束
+		gl.glFinish();
+		// 禁用顶点、纹理座标数组
+		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
+		gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+		// 递增角度值以便每次以不同角度绘制
+	}
+
 
 	void drawAugmentedScene(GL10 gl)
 	{
@@ -773,7 +811,7 @@ public class ARCubeRenderer implements Renderer{
 			//Matrix44 glMatrix = patternPose.getMat44();
 			float[] glPose=getGLPose();
 			Log.e(TAG, "this is before");
-			
+
 			if(glPose==null){
 				return;
 			}
@@ -811,11 +849,11 @@ public class ARCubeRenderer implements Renderer{
 			gl.glLoadMatrixf(glposeBuffer);
 			gl.glTranslatef(centerx, -centery, -centerz);
 			//gl.glTranslatef(0, 0, -centerz);
-			gl.glScalef(15, 15, 15);
+			gl.glScalef(2, 2, 2);
 
 			// Render model
-			drawCoordinateAxis(gl);
-			//drawCubeModel(gl);
+			//drawCoordinateAxis(gl);
+			drawCubeModel2(gl);
 		}
 	}
 
@@ -1050,14 +1088,22 @@ public class ARCubeRenderer implements Renderer{
 		// 递增角度值以便每次以不同角度绘制
 	}
 
-	/*private void loadTexture(GL10 gl)
+	private void loadTexture(GL10 gl)
 	{
 		Bitmap bitmap = null;
+		Log.e(TAG,"here");
 		try
 		{
 			// 加载位图
-			bitmap = BitmapFactory.decodeResource(context.getResources(),
-					R.drawable.sand);
+			Log.e(TAG,"dddhere");
+			bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.sand);
+			Log.e(TAG,"ddddddddhere");
+			if(bitmap==null){
+				Log.e(TAG,"bitmap null");
+			}
+			else {
+				Log.e(TAG,"bitmap not null");
+			}
 			int[] textures = new int[1];
 			// 指定生成N个纹理（第一个参数指定生成1个纹理），
 			// textures数组将负责存储所有纹理的代号。
@@ -1086,7 +1132,7 @@ public class ARCubeRenderer implements Renderer{
 			if (bitmap != null)
 				bitmap.recycle();
 		}
-	}*/
+	}
 
 	// 定义一个工具方法，将int[]数组转换为OpenGL ES所需的IntBuffer
 	private IntBuffer intBufferUtil(int[] arr)

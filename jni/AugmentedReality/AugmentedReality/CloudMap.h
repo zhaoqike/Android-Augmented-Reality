@@ -76,6 +76,10 @@ public:
 
 
 
+	Model model;
+
+
+
 
 	CloudMap(void);
 	~CloudMap(void);

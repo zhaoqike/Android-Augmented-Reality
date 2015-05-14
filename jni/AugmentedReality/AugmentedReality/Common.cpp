@@ -286,3 +286,40 @@ void CloudPointsToPoints(vector<CloudPoint>& cloudPoints, vector<Point3f>& point
 	}
 	
 }
+
+
+
+
+
+
+PMesh* makeMesh(string path)
+{
+	PMesh::EdgeCost g_edgemethod = PMesh::QUADRICTRI;
+	const char* charPath = path.c_str();
+	Mesh* mesh = new Mesh(charPath);
+	//vector<vertex>& vert = g_pMesh->_vlist;
+
+	if (mesh)
+	{
+		mesh->Normalize(0.2f);// center mesh around the origin & shrink to fit
+	}
+	conprint << "after normal" << endl;
+	conprint << "  " << endl;
+
+	PMesh* pmesh = new PMesh(mesh, g_edgemethod);
+	return pmesh;
+}
+
+
+Model::Model(string path)
+{
+	pmesh = makeMesh(path);
+	edgeNum = pmesh->numEdgeCollapses();
+}
+
+Model::Model()
+{
+	//meshIndex = 0;
+}
+
+

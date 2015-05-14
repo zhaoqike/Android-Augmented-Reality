@@ -16,6 +16,9 @@ using namespace cv;
 #include "CloudPoint.h"
 #include "MyKeyPoint.h"
 
+#include <Model/mesh.h>
+#include <Model/pmesh.h>
+
 #define USE_SYS_TRIANGULATION 0
 
 extern bool isPrint;
@@ -138,3 +141,19 @@ void redirectStdout(string path);
 void redirectStderr(string path);
 
 void CloudPointsToPoints(vector<CloudPoint>& cloudPoints, vector<Point3f>& points3d);
+
+
+struct Model
+{
+	//int meshIndex;
+	int edgeNum;
+	Point2f p2d;
+	Point3f p3d;
+	Model(int index);
+	Model(string path);
+	Model();
+	int meshEdgeNum();
+	int getEdgeNum(float distance);
+	int getActiveNum();
+	PMesh* pmesh;
+};
